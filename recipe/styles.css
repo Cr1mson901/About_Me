@@ -1,0 +1,16 @@
+body {
+    background-color:rgb(218, 200, 186);
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color:red;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
