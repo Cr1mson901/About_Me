@@ -38,6 +38,11 @@
     background-size: cover;
 }
 
+#window {
+    background: url("./ICON/windows.png");
+    background-size: cover;
+}
+
 
 #screen {
     background: url("./win10.jpg");
