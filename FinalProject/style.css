@@ -1,6 +1,58 @@
-#icon {
-    background: transparent;
-    outline: none;
+.icon {
     width: 48px;
     height: 48px;
+    border: transparent;
+    position: static="0,0";
+}
+
+#profile {
+    background: url("./icon/profile.png");
+    background-size: cover;
+}
+#folder {
+    background: url("./icon/folder.png");
+    background-size: cover;
+}
+#pdf {
+    background: url("./icon/pdf.png");
+    background-size: cover;
+}
+#file {
+    background: url("./icon/file.png");
+    background-size: cover;
+}
+#cloudy {
+    background: url("./icon/weatherICONS/cloudy.png");
+    background-size: cover;
+}
+#rain {
+    background: url("./icon/weatherICONS/rain.png");
+    background-size: cover;
+}
+#snow {
+    background: url("./icon/weatherICONS/snow.png");
+    background-size: cover;
+}
+#sun {
+    background: url("./icon/weatherICONS/sun.png");
+    background-size: cover;
+}
+
+
+#screen {
+    background: url("./win10.jpg");
+    background-size: cover; 
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#taskBar {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
