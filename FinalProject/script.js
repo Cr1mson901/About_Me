@@ -14,10 +14,6 @@ function getLocation() {
   }
 }
 
-function showPosition(position){
-    pos.innerHTML = position.coords.latitude + "<br>" + position.coords.longitude
-}
-
 function getWeather(position){
     const url = 
         `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=92cd8cd8f4fb9e75e5bfd3035db58c91`
