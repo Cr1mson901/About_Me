@@ -21,6 +21,9 @@ function getWeather(position){
     .then((response) => response.json())
     .then((date) => console.log(data));
 }
+function setWeather(){
+    
+}
 function setWeather(weather){
     let test = document.getElementById("currentWeather")
     test.innerHTML = weather.main.temp

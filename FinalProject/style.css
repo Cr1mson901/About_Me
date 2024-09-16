@@ -5,11 +5,18 @@
     cursor: pointer;
     position: relative;
     margin: 6px;
+    padding: 0;
 }
 .taskBarIcon {
     width: 32px;
     height: 32px;
     margin: 0px;
+}
+
+.iconLabel {
+    margin-top: 45px;
+    text-align: center;
+    font-size: small;
 }
 
 #profile {
