@@ -71,3 +71,21 @@
     height: 32px;
     left: 0;
 }
+
+#currentTime {
+    font-size: medium;
+    color: cyan;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+}
+
+#currentWeather {
+    font-size: medium;
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    bottom: -10px;
+    right: 100px;
+}
