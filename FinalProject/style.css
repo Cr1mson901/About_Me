@@ -47,6 +47,14 @@
     background: url("./icon/weatherICONS/snow.png");
     background-size: cover;
 }
+#thunderstorm {
+    background: url("./icon/weatherICONS/thunderstorm.png");
+    background-size: cover;
+}
+#fog {
+    background: url("./icon/weatherICONS/fog.png");
+    background-size: cover;
+}
 #sun {
     background: url("./icon/weatherICONS/sun.png");
     background-size: cover;

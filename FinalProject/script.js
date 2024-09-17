@@ -44,7 +44,30 @@ function getWeather(position){
         if (data && data.main && data.main.temp) {
             const temperature = Math.round(((data.main.temp - 273.15) * 1.8 + 32) * 10) / 10
             const tempElement = document.getElementById('temp'); // Find the element
+            // const weatherID = data.weather.id.toString();
             tempElement.innerHTML = `${temperature}°F`; // Set the innerHTML with the temperature
+            // switch (weatherID[0]) {
+            //     case "2":
+            //         icon = "thunderstorm";
+            //         break;
+            //     case "3":
+            //     case "5":
+            //         icon = "rain"
+            //         break;
+            //     case "6":
+            //         icon = "snow"
+            //         break;
+            //     case "7":
+            //         icon = "fog"
+            //         break;
+            //     case "8":
+            //         if (weatherID[1] == 0){
+            //             icon = "sun"
+            //         } else {
+            //             icon = "cloudy"
+            //         }
+            // }
+            // document.getElementsById("file").innerHTML = icon
         } else {
             console.error('Unexpected data structure:', data);
         }
