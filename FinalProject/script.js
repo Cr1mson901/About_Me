@@ -1,9 +1,16 @@
+const intervalSeconds = 1 * 1000;
+const intervalMinutes = 15 * 60 * 1000;
+
+
 let time = document.getElementById("currentTime");
 setInterval(() =>{
     let d = new Date ();
     time.innerHTML = d.toLocaleTimeString();
-},1000)
+},intervalSeconds)
 
+setInterval(getLocation(), intervalMinutes); // Runs get location every 15 minutes//
+
+let pos = document.getElementById("currentLocation");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.permissions &&
@@ -13,7 +20,7 @@ function getLocation() {
             console.log(geoposition) /* You can use this position without prompting the user if the permission had already been granted */
         })
     } else {
-        navigator.geolocation.getCurrentPosition(getWeather);
+    navigator.geolocation.getCurrentPosition(getWeather);
     }
     })
 
