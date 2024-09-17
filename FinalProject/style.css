@@ -59,6 +59,10 @@
     background: url("./icon/weatherICONS/sun.png");
     background-size: cover;
 }
+#cloudError {
+    background: url("./icon/weatherICONS/cloudError.png");
+    background-size: cover;
+}
 #github {
     background: url("./icon/github.png");
     background-size: cover;
