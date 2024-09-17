@@ -4,10 +4,18 @@ setInterval(() =>{
     time.innerHTML = d.toLocaleTimeString();
 },1000)
 
-let pos = document.getElementById("currentLocation");
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getWeather);
+    navigator.permissions &&
+    navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
+    if('granted' === PermissionStatus.state) {
+        navigator.geolocation.getCurrentPosition(function(geoposition) {
+            console.log(geoposition) /* You can use this position without prompting the user if the permission had already been granted */
+        })
+    } else {
+        navigator.geolocation.getCurrentPosition(getWeather);
+    }
+    })
 
   } else {
     pos.innerHTML = "Geolocation is not supported by this browser.";
