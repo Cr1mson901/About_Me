@@ -8,7 +8,8 @@ setInterval(() =>{
     time.innerHTML = d.toLocaleTimeString();
 },intervalSeconds)
 
-setInterval(getLocation(), intervalMinutes); // Runs get location every 15 minutes//
+getLocation()
+setInterval(getLocation, intervalMinutes); // Runs get location every 15 minutes//
 
 let pos = document.getElementById("currentLocation");
 function getLocation() {
@@ -44,34 +45,9 @@ function getWeather(position){
         if (data && data.main && data.main.temp) {
             const temperature = Math.round(((data.main.temp - 273.15) * 1.8 + 32) * 10) / 10
             const tempElement = document.getElementById('temp'); // Find the element
-            const weatherID = data.weather[0].id.toString()
             tempElement.innerHTML = `${temperature}°F`; // Set the innerHTML with the temperature
-            let icon = ""
-            switch (weatherID[0]) {
-                case "2":
-                    icon = "thunderstorm";
-                    break;
-                case "3":
-                case "5":
-                    icon = "rain";
-                    break;
-                case "6":
-                    icon = "snow";
-                    break;
-                case "7":
-                    icon = "fog";
-                    break;
-                case "8":
-                    if (weatherID[1] == "0") {
-                        icon = "sun";
-                    } else {
-                        icon = "cloudy";
-                    }
-                    break;
-                default:
-                    icon = "cloudError"
-            }
-            document.getElementsByClassName("weather")[0].id = icon
+            let iconURL = `./icon/weather/${data.weather[0].icon}.png`
+            document.getElementById("weather").style.backgroundImage = `url(${iconURL})`
         } else {
             console.error('Unexpected data structure:', data);
         }
@@ -80,4 +56,3 @@ function getWeather(position){
         console.error('There was a problem with the fetch operation:', error);
     });
 }
-
