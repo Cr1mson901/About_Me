@@ -18,7 +18,7 @@ function getLocation() {
     navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
     if('granted' === PermissionStatus.state) {
         navigator.geolocation.getCurrentPosition(function(geoposition) {
-            console.log(geoposition) /* You can use this position without prompting the user if the permission had already been granted */
+            getWeather(geoposition) // Uses this position if location has been accepted
         })
     } else {
     navigator.geolocation.getCurrentPosition(getWeather);
