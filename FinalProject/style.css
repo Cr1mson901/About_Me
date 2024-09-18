@@ -6,15 +6,19 @@
     position: relative;
     margin: 6px;
     padding: 0;
+    margin-bottom: 30px;
 }
 .taskBarIcon {
-    width: 32px;
-    height: 32px;
-    margin: 0px;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    margin-top: 8px;
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
 .iconLabel {
-    margin-top: 45px;
+    margin-top: 50px;
     text-align: center;
     font-size: small;
 }
@@ -35,32 +39,8 @@
     background: url("./icon/file.png");
     background-size: cover;
 }
-#cloudy {
-    background: url("./icon/weatherICONS/cloudy.png");
-    background-size: cover;
-}
-#rain {
-    background: url("./icon/weatherICONS/rain.png");
-    background-size: cover;
-}
-#snow {
-    background: url("./icon/weatherICONS/snow.png");
-    background-size: cover;
-}
-#thunderstorm {
-    background: url("./icon/weatherICONS/thunderstorm.png");
-    background-size: cover;
-}
-#fog {
-    background: url("./icon/weatherICONS/fog.png");
-    background-size: cover;
-}
-#sun {
-    background: url("./icon/weatherICONS/sun.png");
-    background-size: cover;
-}
-#cloudError {
-    background: url("./icon/weatherICONS/cloudError.png");
+#weather {
+    background: url("./ICON/weather/cloudError.png");
     background-size: cover;
 }
 #github {
@@ -71,17 +51,16 @@
 #window {
     background: url("./ICON/windows.png");
     background-size: cover;
+    margin-left: 8px;
 }
 
 #wallpaper {
     background: url("./win10.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    right: -8px;
-    top: -10px;
-    left: -8px;
-    bottom: 16px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     padding-top: 10px;
     padding-left: 10px;
 }
@@ -91,9 +70,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 32px;
+    height: 40px;
     left: 0;
-
 }
 
 #currentTime {
@@ -101,8 +79,9 @@
     color: whitesmoke;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
+    margin-top: 8px;
     right: 10px;
-    bottom: -10px;
+    bottom: -8px;
 }
 
 /* #currentLocation {
