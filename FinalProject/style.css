@@ -95,3 +95,30 @@ html, body {
     bottom: -10px;
     right: 100px;
 }
+
+
+/* Code for the Login Screen */
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 800px;
+    height: 800px;
+    border: 1px ridge #F5F3F1;
+    padding: 10px;
+    background-color: #D6D6D6;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+.innerBox {
+    position: relative;
+    top: 40px;
+    left: 40px;
+    padding: 10px;
+    width: 700px; /* Correct Ratio between boxes*/
+    height: 542px;
+    border: 2px groove #3B3B3B;
+    background-color: #C1C1C1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
