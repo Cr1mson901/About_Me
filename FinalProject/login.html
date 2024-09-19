@@ -9,15 +9,20 @@
 <body style="background-color: #4C719E;">
     <div class="box">
         <div class="innerBox"> 
-            <figure style="text-align: center; position: relative; transform: translateX(-300px);">
+            <figure class="userIcon">
                 <img src="./ICON/irix/display.png" alt="Display">
                 <figcaption>Root</figcaption>
             </figure>
+            <figure class="userIcon">
+                <img src="./ICON/irix/display.png" alt="Display">
+                <figcaption>Cr1m</figcaption>
+            </figure>
         </div>
-        <p id="loginText">Login Name:<input type="text" id="loginInput"></p>
+        <p id="loginText" maxlegth=8>Login Name:<input type="text" id="loginInput"></p>
         <img src="./ICON/irix/iris-removebg-preview.png" id="iris">
-        <button class="button" style="right: 140px; bottom: 50px;">Log in</button>
-        <button class="button" style="right: 50px; bottom: 50px;">Help</button>
+        <button class="button" type="button" id="loginBTN">Log in</button>
+        <button class="button" type="button" id="helpBTN">Help</button>
     </div>
+    <script src="login.js"></script>
 </body>
 </html>
