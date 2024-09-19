@@ -1,6 +1,9 @@
-html, body {
+html, body, button{
     cursor: url("./ICON/pointer.cur"), default;
 }
+input {
+    caret-color: red;
+  }
 .icon {
     width: 48px;
     height: 48px;
@@ -121,6 +124,15 @@ html, body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+.userIcon{
+    text-align: center; 
+    position: relative; 
+    transform: translateX(0px);
+    margin-right: 0;
+    margin-left: 20px;
+    display: inline-block;
+}
+
 #loginText {
     position: absolute; 
     bottom: 125px; 
@@ -136,6 +148,7 @@ html, body {
     background-color: #B98E8E; 
     position: relative; 
     left: 5px;
+    outline: none;
 }
 
 #iris {
@@ -150,9 +163,22 @@ html, body {
     color: black;
     border: 2px solid #404040;
     padding: 5px 10px;
-    box-shadow: 1px 1px 0px #fff, -1px -1px 0px #888; /* 3D effect */
+    box-shadow: -1px -1px 0px #fff, 1px 1px 0px #888; /* 3D effect */
     width: 80px;
     height: 33px;
     position: absolute;
     font-size: small;
+}
+
+.button:active {
+    box-shadow: inset -1px -1px 0px #888, inset 1px 1px 0px #fff; /* Pressed effect */
+}
+
+#loginBTN {
+    right: 140px; 
+    bottom: 50px;
+}
+#helpBTN {
+    right: 50px; 
+    bottom: 50px;
 }
