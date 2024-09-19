@@ -1,9 +1,25 @@
+var userNames = JSON.parse(localStorage.getItem("userNames") || '[]');
+//Adds all locally stored usernames//
+window.onload = function() {
+    userNames.forEach((name) => addUser(name));
+
+};
+
 // Button implementation for login screen//
 const loginBTN = document.getElementById("loginBTN");
 
 loginBTN.addEventListener("click", function(e){
     const inputField = document.getElementById("loginInput");
-    addUser(inputField.value);
+    const name = inputField.value.toLowerCase()
+    if (inputField.value == '') {
+        console.log('empty')
+    } else if (!userNames.includes(name) && inputField.value != 'root') {
+        addUser(name);
+        userNames.push(name);
+        localStorage.setItem('userNames', JSON.stringify(userNames));
+    } else {
+        console.log("login");
+    }
     inputField.value = ""
 });
 
