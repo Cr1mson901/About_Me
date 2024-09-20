@@ -52,7 +52,6 @@ loginBTN.addEventListener("click", function(e){
         console.log("login");
         login()
     } else {
-        //TO:DO Implement login feature here
         console.log("login");
         login()
     }
@@ -111,10 +110,16 @@ function iconReset(selected) {
         let img = figure.querySelector("img");
         img.src = "./ICON/irix/display.png"
     }
-    iconSelected = selected
-    accountLabel.innerHTML = ''
+    iconSelected = selected;
+    accountLabel.innerHTML = '';
 }
 
 function login(){
-    window.location.href='desktop.html'
+    window.location.href='desktop.html';
 }
+
+// TODO: Help button implementation//
+const helpBTN = document.getElementById("helpBTN");
+helpBTN.addEventListener("click", function() {
+    //TODO: add pop up that explains the website and how to login
+})
