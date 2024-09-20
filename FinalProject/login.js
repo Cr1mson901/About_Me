@@ -49,9 +49,12 @@ loginBTN.addEventListener("click", function(e){
         addUser(name);
         userNames.push(name);
         localStorage.setItem('userNames', JSON.stringify(userNames));
+        console.log("login");
+        login()
     } else {
         //TO:DO Implement login feature here
         console.log("login");
+        login()
     }
     //Resets inputField
     inputField.value = ""
@@ -110,4 +113,8 @@ function iconReset(selected) {
     }
     iconSelected = selected
     accountLabel.innerHTML = ''
+}
+
+function login(){
+    window.location.href='desktop.html'
 }
