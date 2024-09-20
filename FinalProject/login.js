@@ -3,6 +3,7 @@ var iconSelected = false;
 //Adds all locally stored usernames//
 window.onload = function() {
     userNames.forEach((name) => addUser(name));
+    //Same code repeated throughout the file
     var figures = document.querySelectorAll('figure')
     for (let figure of figures) {
         figure.addEventListener("click", function() {
@@ -20,6 +21,20 @@ inputField.addEventListener('input', function() {
     if (iconSelected){
         console.log("reset")        
         iconReset(false)
+    }
+    if (userNames.includes(inputField.value.toLowerCase())){
+        console.log('match')
+        //Reduce this code
+        var figures = document.querySelectorAll('figure');
+        for (let figure of figures) {
+            let name = figure.querySelector("figcaption");
+            if (name.textContent == inputField.value.toLowerCase()){
+                iconSelect(figure);
+                break;
+            }
+        }
+    } else if (inputField.value.toLowerCase() == "root"){
+        iconSelect(document.getElementById('root'))
     }
 })
 
@@ -75,6 +90,7 @@ function iconSelect(icon){
 }
 
 function iconReset(selected) {
+    //Last one of these codes that needs to be combined
     var figures = document.querySelectorAll('figure');
     for (let figure of figures) {
         let img = figure.querySelector("img");
