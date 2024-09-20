@@ -1,5 +1,6 @@
 var userNames = JSON.parse(localStorage.getItem("userNames") || '[]');
 var iconSelected = false;
+var accountLabel = document.getElementById("account");
 //Adds all locally stored usernames//
 window.onload = function() {
     userNames.forEach((name) => addUser(name));
@@ -10,7 +11,6 @@ window.onload = function() {
         iconSelect(this);
     })
 };
-
 
 // Button implementation for login screen//
 const loginBTN = document.getElementById("loginBTN");
@@ -74,7 +74,7 @@ function addUser(name) {
         iconSelect(this);
     });
     // Adds elements into the figure
-    newUser.appendChild(img)
+    newUser.appendChild(img);
     newUser.appendChild(newName);
 
     // Inserts figure into the html
@@ -91,8 +91,14 @@ function insertAfter(referenceNode, newNode) {
 function iconSelect(icon){
     iconReset(true);
     let img = icon.querySelector("img");
-    img.src = "./ICON/irix/selectedDisplay.png"
-    inputField.value = icon.querySelector("figcaption").innerHTML;
+    img.src = "./ICON/irix/selectedDisplay.png";
+    let accountName = icon.querySelector("figcaption").innerHTML;
+    inputField.value = accountName;
+    if (accountName == 'root') {
+        accountLabel.innerHTML = 'Super-User'
+    } else {
+        accountLabel.innerHTML = accountName + " Account"
+    }
 }
 
 function iconReset(selected) {
@@ -103,4 +109,5 @@ function iconReset(selected) {
         img.src = "./ICON/irix/display.png"
     }
     iconSelected = selected
+    accountLabel.innerHTML = ''
 }

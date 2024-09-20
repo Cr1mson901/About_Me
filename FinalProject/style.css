@@ -1,6 +1,9 @@
 html, body{
     cursor: url("./ICON/xCursor.cur"), default;
 }
+body {
+    background-color: #4C719E;
+}
 button {
     cursor: url("./ICON/pointer.cur"), default;
 }
@@ -157,6 +160,14 @@ input {
     left: 5px;
     outline: none;
     font-size: x-large;
+}
+
+#account {
+    position: relative;
+    font-size: xx-large;
+    left: 20px;
+    font-weight: 200;
+    font-family: "Raleway", sans-serif;
 }
 
 #iris {
