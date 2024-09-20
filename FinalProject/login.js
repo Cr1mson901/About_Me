@@ -3,13 +3,12 @@ var iconSelected = false;
 //Adds all locally stored usernames//
 window.onload = function() {
     userNames.forEach((name) => addUser(name));
-    //Same code repeated throughout the file
-    var figures = document.querySelectorAll('figure')
-    for (let figure of figures) {
-        figure.addEventListener("click", function() {
-            iconSelect(this);
-        })
-}
+    //Only needs to apply to the root icon
+    var figure = document.querySelector("figure")
+    console.log(figure)
+    figure.addEventListener("click", function() {
+        iconSelect(this);
+    })
 };
 
 
@@ -18,10 +17,12 @@ const loginBTN = document.getElementById("loginBTN");
 // InputField for login grabbed
 const inputField = document.getElementById("loginInput");
 inputField.addEventListener('input', function() {
+    //Checks if there are any icons to reset to not perform unnecesary actions
     if (iconSelected){
         console.log("reset")        
         iconReset(false)
     }
+    //Highlights if the text matches an existing username
     if (userNames.includes(inputField.value.toLowerCase())){
         console.log('match')
         //Reduce this code
@@ -33,11 +34,13 @@ inputField.addEventListener('input', function() {
                 break;
             }
         }
-    } else if (inputField.value.toLowerCase() == "root"){
+        //Might try and get rid of this line of code later on
+    } else if (inputField.value.toLowerCase() == "root"){ //Highlight if root since root isn't in the username list
         iconSelect(document.getElementById('root'))
     }
 })
 
+//When the button is clicked, checks if there is text in the inputField. If so checks against user records.
 loginBTN.addEventListener("click", function(e){
     const name = inputField.value.toLowerCase()
     if (inputField.value == '') {
@@ -47,8 +50,10 @@ loginBTN.addEventListener("click", function(e){
         userNames.push(name);
         localStorage.setItem('userNames', JSON.stringify(userNames));
     } else {
+        //TO:DO Implement login feature here
         console.log("login");
     }
+    //Resets inputField
     inputField.value = ""
 });
 
@@ -64,6 +69,7 @@ function addUser(name) {
     const newName = document.createElement('figcaption');
     newName.textContent = name
 
+    //Adds a click listner to the new entity
     newUser.addEventListener("click", function(){
         iconSelect(this);
     });
