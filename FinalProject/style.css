@@ -7,9 +7,6 @@ body {
 button {
     cursor: url("./ICON/pointer.cur"), default;
 }
-input {
-    caret-color: red;
-  }
 .icon {
     width: 48px;
     height: 48px;
