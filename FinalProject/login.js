@@ -55,6 +55,7 @@ loginBTN.addEventListener("click", function(e){
         console.log("login");
         login()
     }
+    window.name = name;
     //Resets inputField
     inputField.value = ""
 });
