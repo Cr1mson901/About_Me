@@ -111,7 +111,7 @@ button {
     transform: translateX(-50%) translateY(-50%);
     height: 100%;
     z-index: 0;
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./ICON/xCursor.cur"), default;
     background-color: #4C719E;
 }
 .crt::before {
@@ -128,8 +128,87 @@ button {
     pointer-events: none;
     border-radius: 40px;
   }
+  @keyframes flicker {
+    0% {
+    opacity: 0.27861;
+    }
+    5% {
+    opacity: 0.34769;
+    }
+    10% {
+    opacity: 0.23604;
+    }
+    15% {
+    opacity: 0.90626;
+    }
+    20% {
+    opacity: 0.18128;
+    }
+    25% {
+    opacity: 0.83891;
+    }
+    30% {
+    opacity: 0.65583;
+    }
+    35% {
+    opacity: 0.67807;
+    }
+    40% {
+    opacity: 0.26559;
+    }
+    45% {
+    opacity: 0.84693;
+    }
+    50% {
+    opacity: 0.96019;
+    }
+    55% {
+    opacity: 0.08594;
+    }
+    60% {
+    opacity: 0.20313;
+    }
+    65% {
+    opacity: 0.71988;
+    }
+    70% {
+    opacity: 0.53455;
+    }
+    75% {
+    opacity: 0.37288;
+    }
+    80% {
+    opacity: 0.71428;
+    }
+    85% {
+    opacity: 0.70419;
+    }
+    90% {
+    opacity: 0.7003;
+    }
+    95% {
+    opacity: 0.36108;
+    }
+    100% {
+    opacity: 0.24387;
+    }
+  }
   
-
+  .crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 9%;
+    bottom: 11%;
+    left: 22%;
+    right: 22.3%;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker .15s infinite;
+  }
+  
 .box {
     position: absolute;
     top: 50%;
@@ -250,6 +329,10 @@ li:hover{
 .icon{
     margin: 25px;
     text-align: center;
+}
+
+.icon:hover{
+    cursor: url("./ICON/pointer.cur"), default;
 }
 
 #iconBox{
