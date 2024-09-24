@@ -350,5 +350,5 @@ li:hover{
     position: absolute;
     left: 30%;
     top: 10%;
+    cursor: move;
 }
-
