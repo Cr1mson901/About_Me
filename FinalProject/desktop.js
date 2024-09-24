@@ -8,7 +8,8 @@ window.onload = function() {
 }
 
 // Get the draggable element and the container
-var dragElement = document.getElementById("toolchest");
+var dragElement = document.getElementById("header");
+var dragTable = document.getElementById("toolchest");
 var container = document.getElementById("border");
 
 // Variables to store mouse position and offsets
@@ -33,19 +34,19 @@ dragElement.onmousedown = function(e) {
         mouseY = e.clientY;
 
         // Calculate the new position of the draggable element
-        var newTop = dragElement.offsetTop - offsetY;
-        var newLeft = dragElement.offsetLeft - offsetX;
+        var newTop = dragTable.offsetTop - offsetY;
+        var newLeft = dragTable.offsetLeft - offsetX;
 
         // Get the bounding box of the container
         var containerRect = container.getBoundingClientRect();
-        var dragRect = dragElement.getBoundingClientRect();
+        var dragRect = dragTable.getBoundingClientRect();
 
         // Check if the new position is within the container bounds
         if (newLeft >= 580 && newLeft + dragRect.width <= containerRect.width + 230) {
-            dragElement.style.left = newLeft + "px";
+            dragTable.style.left = newLeft + "px";
         }
         if (newTop >= 130 && newTop + dragRect.height <= containerRect.height - 160) {
-            dragElement.style.top = newTop + "px";
+            dragTable.style.top = newTop + "px";
         }
     };
 
