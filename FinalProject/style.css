@@ -7,7 +7,7 @@ body {
 button {
     cursor: url("./ICON/pointer.cur"), default;
 }
-.icon {
+/* .icon {
     width: 48px;
     height: 48px;
     border: transparent;
@@ -16,8 +16,8 @@ button {
     margin: 6px;
     padding: 0;
     margin-bottom: 30px;
-}
-.taskBarIcon {
+} */
+/* .taskBarIcon {
     width: 24px;
     height: 24px;
     margin: 0;
@@ -91,7 +91,7 @@ button {
     margin-top: 8px;
     right: 10px;
     bottom: -8px;
-}
+} */
 
 /* #currentLocation {
     font-size: medium;
@@ -115,6 +115,7 @@ button {
     background-color: #D6D6D6;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
+/* Turns the cursor into the pointer while hovering */
 .box:hover {
     cursor: url("./ICON/pointer.cur"), default;
 }
@@ -128,7 +129,6 @@ button {
     border: 2px groove #3B3B3B;
     background-color: #C1C1C1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    cursor: url("./ICON/pointer.cur");
 }
 
 .userIcon{
@@ -197,4 +197,48 @@ button {
 #helpBTN {
     right: 50px; 
     bottom: 50px;
+}
+
+/* Desktop Styling */
+
+/* Tool Box styling */
+li{
+    border: 1px solid;
+    width: 200px;
+    border-color: black;
+    background-color: #C1C1C1;
+    padding: 2px;
+    padding-left: 10px;
+}
+li:hover{
+    cursor: url("./ICON/pointer.cur"), default;
+}
+#header {
+   background-color: #A59F80;
+}
+#header:hover{
+    cursor: grab;
+}
+
+.icon{
+    margin: 30px;
+    text-align: center;
+}
+.icon img{
+    scale: 1.8;
+    padding-bottom: 10px;
+}
+
+.icon figcaption{
+    font-size: x-large;
+}
+#iconBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    right: 1%;
+    top: 50%;
+    bottom: 50%
 }
