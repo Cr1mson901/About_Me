@@ -1,5 +1,10 @@
 window.onload = function() {
-    document.getElementById("user").innerHTML = window.name;
+    var chestUser = document.getElementById("user")
+    if (window.name){
+        chestUser.innerHTML = window.name;
+    } else {
+        chestUser.innerHTML = "Cr1mson"
+    }
 }
 
 // Get the draggable element and the container
@@ -50,3 +55,8 @@ dragElement.onmousedown = function(e) {
         document.onmouseup = null;
     };
 };
+
+const logOutBTN = document.getElementById("exit")
+logOutBTN.addEventListener("click", function(){
+    window.location.href='login.html';
+})
