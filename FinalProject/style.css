@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body{
     cursor: none;
 }
@@ -249,7 +253,7 @@ li:hover{
     position: absolute;
     display:none;
     list-style: none;
-    left: 81%;
+    left: 80%;
     top: 50%;
 }
 
@@ -282,7 +286,7 @@ li:hover{
     flex-direction: column;
     position: absolute;
     justify-content: center;
-    right: 22%;
+    right: 23%;
     top: 50%;
     bottom: 50%;
     font-style: italic;
