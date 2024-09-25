@@ -8,13 +8,18 @@ button {
     cursor: url("./ICON/pointer.cur"), default;
 }
 
+/* TODO: Implement powerBTN */
+#powerBTN{
+    all: unset;
+}
+
 /* Code for the Login Screen */
 #border{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    height: 100%;
+    height: 100vh;
     z-index: 0;
     cursor: url("./ICON/xCursor.cur"), default;
     background-color: #4C719E;
@@ -149,6 +154,8 @@ button {
     margin-right: 0;
     margin-left: 20px;
     display: inline-block;
+    overflow: auto;
+    max-height: 60vh;
 }
 
 #loginText {
@@ -213,6 +220,14 @@ button {
 /* Desktop Styling */
 
 /* Tool Box styling */
+#toolchest{
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    cursor: move;
+    z-index: 1;
+}
+
 li{
     border: 1px solid;
     width: 200px;
@@ -220,10 +235,29 @@ li{
     background-color: #C1C1C1;
     padding: 2px;
     padding-left: 10px;
+    font-style: italic;
 }
 li:hover{
     cursor: url("./ICON/pointer.cur"), default;
 }
+
+.mainmenu:hover > .submenu{
+    display:block;
+}
+
+.submenu {
+    position: absolute;
+    display:none;
+    list-style: none;
+    left: 81%;
+    top: 50%;
+}
+
+.submenu li{
+    width: auto;
+    padding-right: 10px;
+}
+
 #header {
    background-color: #A59F80;
 }
@@ -231,6 +265,8 @@ li:hover{
     cursor: grab;
 }
 
+
+/* Icons Styling */
 .icon{
     margin: 25px;
     text-align: center;
@@ -248,13 +284,7 @@ li:hover{
     justify-content: center;
     right: 22%;
     top: 50%;
-    bottom: 50%
-}
-
-#toolchest{
-    position: absolute;
-    left: 30%;
-    top: 10%;
-    cursor: move;
-    z-index: 1;
+    bottom: 50%;
+    font-style: italic;
+    cursor: url("./ICON/xCursor.cur"), default;
 }
