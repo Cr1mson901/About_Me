@@ -131,8 +131,8 @@ button {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 800px;
-    height: 800px;
+    width: 55vmin;
+    height: 55vmin;
     border: 1px ridge #F5F3F1;
     background-color: #D6D6D6;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -145,24 +145,27 @@ button {
 
 .innerBox {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 700px; /* Correct Ratio between boxes*/
-    height: 542px;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48.6vmin; /* Correct Ratio between boxes*/
+    height: 37.6vmin;
     border: 2px groove #3B3B3B;
     background-color: #C1C1C1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Adjust to scale with res size */
 .userIcon{
     text-align: center; 
     position: relative; 
     transform: translateX(0px);
     margin-right: 0;
-    margin-left: 20px;
+    margin-left: 5%;
     display: inline-block;
     overflow: auto;
-    max-height: 60vh;
+    max-height: 16vmin;
+    max-width: 16vmin;
 }
 
 #loginText {
