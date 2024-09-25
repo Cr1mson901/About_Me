@@ -121,6 +121,7 @@ button {
     z-index: 2;
     pointer-events: none;
     animation: flicker .15s infinite;
+    border-radius: 40px;
   }
   
 .box {
