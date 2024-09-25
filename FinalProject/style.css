@@ -7,101 +7,6 @@ body {
 button {
     cursor: url("./ICON/pointer.cur"), default;
 }
-/* .icon {
-    width: 48px;
-    height: 48px;
-    border: transparent;
-    cursor: pointer;
-    position: relative;
-    margin: 6px;
-    padding: 0;
-    margin-bottom: 30px;
-} */
-/* .taskBarIcon {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-    margin-top: 8px;
-    margin-right: 12px;
-    margin-left: 12px;
-}
-
-.iconLabel {
-    margin-top: 50px;
-    text-align: center;
-    font-size: small;
-}
-
-#profile {
-    background: url("./icon/profile.png");
-    background-size: cover;
-}
-#folder {
-    background: url("./icon/folder.png");
-    background-size: cover;
-}
-#pdf {
-    background: url("./icon/pdf.png");
-    background-size: cover;
-}
-#file {
-    background: url("./icon/file.png");
-    background-size: cover;
-}
-#weather {
-    background: url("./ICON/weather/cloudError.png");
-    background-size: cover;
-}
-#github {
-    background: url("./icon/github.png");
-    background-size: cover;
-    
-}
-#window {
-    background: url("./ICON/windows.png");
-    background-size: cover;
-    margin-left: 8px;
-}
-
-#wallpaper {
-    background: url("./win10.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-#taskBar {
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    left: 0;
-}
-
-#currentTime {
-    font-size: medium;
-    color: whitesmoke;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: absolute;
-    margin-top: 8px;
-    right: 10px;
-    bottom: -8px;
-} */
-
-/* #currentLocation {
-    font-size: medium;
-    color: red;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: absolute;
-    bottom: -10px;
-    right: 100px;
-}
-
 
 /* Code for the Login Screen */
 #border{
@@ -351,4 +256,5 @@ li:hover{
     left: 30%;
     top: 10%;
     cursor: move;
+    z-index: 1;
 }
