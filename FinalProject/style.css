@@ -125,6 +125,7 @@ button {
     animation: flicker .15s infinite;
     border-radius: 4%;
   }
+
   
 .box {
     position: absolute;
@@ -234,6 +235,9 @@ button {
 
 /* Tool Box styling */
 #toolchest{
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
     position: absolute;
     left: 30%;
     top: 10%;
@@ -243,12 +247,15 @@ button {
 
 li{
     border: 1px solid;
-    width: 200px;
+    height: 2vmin;
+    width: 16vmin;
     border-color: black;
     background-color: #C1C1C1;
-    padding: 2px;
-    padding-left: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 6%;
     font-style: italic;
+    font-size: 1.4vmin;
 }
 li:hover{
     cursor: url("./ICON/pointer.cur"), default;
@@ -262,13 +269,14 @@ li:hover{
     position: absolute;
     display:none;
     list-style: none;
-    left: 80%;
     top: 50%;
+    left: 80%;
 }
 
 .submenu li{
     width: auto;
-    padding-right: 10px;
+    padding-right: 120%;
+    height: 2vmin;
 }
 
 #header {
@@ -281,12 +289,20 @@ li:hover{
 
 /* Icons Styling */
 .icon{
-    margin: 25px;
+    margin: 2vh;
     text-align: center;
 }
 
 .icon:hover{
     cursor: url("./ICON/pointer.cur"), default;
+}
+
+.icon img{
+    height: 3.75vmin;
+}
+
+.icon figcaption{
+    font-size: 1.25vmin;
 }
 
 #iconBox{
@@ -300,4 +316,8 @@ li:hover{
     bottom: 50%;
     font-style: italic;
     cursor: url("./ICON/xCursor.cur"), default;
+}
+
+#iconBox button{
+    all: unset;
 }
