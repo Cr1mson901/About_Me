@@ -1,5 +1,5 @@
 window.onload = function() {
-    var chestUser = document.getElementById("user")
+    var chestUser = document.getElementById("userName")
     if (window.name){
         chestUser.innerHTML = window.name;
     } else {
