@@ -166,39 +166,43 @@ button {
     overflow: auto;
     max-height: 16vmin;
     max-width: 16vmin;
+    font-size: 1.25vmin;
+}
+.userIcon img{
+    height: 3.76vmin;
 }
 
 #loginText {
     position: absolute; 
-    bottom: 125px; 
-    left: 70px; 
+    bottom: 17%; 
+    left: 9%; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     font-weight: bold; 
-    font-size: large;
+    font-size: 1.41vmin;
 }
 
 #loginInput {
-    width: 250px; 
-    height: 33px; 
+    width: 16vmin;
     background-color: #B98E8E; 
     position: relative; 
-    left: 5px;
+    left: 1.4%;
     outline: none;
-    font-size: x-large;
+    font-size: 2vmin;
 }
 
 #account {
     position: relative;
-    font-size: xx-large;
-    left: 20px;
+    font-size: 2.5vmin;
+    left: 3%;
     font-weight: 200;
     font-family: "Raleway", sans-serif;
 }
 
 #iris {
-    position: absolute; 
-    bottom: 50px; 
-    left: 50px;
+    position: absolute;
+    bottom: 6%; 
+    left: 6%;
+    height: 5%;
 }
 
 .button {
@@ -206,12 +210,11 @@ button {
     background-color: #989898;
     color: black;
     border: 2px solid #404040;
-    padding: 5px 10px;
     box-shadow: -1px -1px 0px #fff, 1px 1px 0px #888; /* 3D effect */
-    width: 80px;
-    height: 33px;
+    width: 11.4%;
+    height: 4.8%;
     position: absolute;
-    font-size: small;
+    font-size: 1vmin;
 }
 
 .button:active {
@@ -219,12 +222,12 @@ button {
 }
 
 #loginBTN {
-    right: 140px; 
-    bottom: 50px;
+    right: 20%; 
+    bottom: 7%;
 }
 #helpBTN {
-    right: 50px; 
-    bottom: 50px;
+    right: 7%; 
+    bottom: 7%;
 }
 
 /* Desktop Styling */
