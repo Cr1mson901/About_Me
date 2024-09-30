@@ -278,14 +278,14 @@ li:hover{
     position: absolute;
     display:none;
     list-style: none;
+    padding: 0;
     top: 50%;
-    left: 80%;
+    left: 100%;
 }
 
 .submenu li{
     width: auto;
     padding-right: 120%;
-    height: 2vmin;
 }
 
 #header {
