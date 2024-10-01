@@ -61,3 +61,21 @@ const logOutBTN = document.getElementById("exit")
 logOutBTN.addEventListener("click", function(){
     window.location.href='login.html';
 })
+
+// Submenu adjuster
+var mainMenus = document.querySelectorAll(".mainmenu")
+mainMenus.forEach(mainMenu => {
+    mainMenu.addEventListener("mouseover", function() {
+        const submenu = mainMenu.querySelector(".submenu");
+        submenu.style.display = "block"
+        subRect = submenu.getBoundingClientRect();
+        submenu.style.left = -(subRect.width * 1.3) + "px"
+        console.log(subRect.width)
+        console.log(submenu.paddingRight)
+    });
+    mainMenu.addEventListener("mouseleave", function() {
+        const submenu = mainMenu.querySelector(".submenu");
+        submenu.style.display = "none"
+    })
+
+});
