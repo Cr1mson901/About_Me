@@ -66,21 +66,21 @@ logOutBTN.addEventListener("click", function(){
 var mainMenus = document.querySelectorAll(".mainmenu")
 mainMenus.forEach((mainMenu, index) => {
     mainMenu.addEventListener("mouseover", function() {
-        var submenu = mainMenu.querySelector(".submenu");
-        submenu.style.display = "block"
-        var subRect = submenu.getBoundingClientRect();
-        var mainRect = mainMenu.getBoundingClientRect();
-        var containerRect = container.getBoundingClientRect();
-        if (containerRect.width <= mainRect.left + (subRect.width * 1.28) + mainRect.width){
-            submenu.style.left = -(subRect.width * 1.28) + "px"
+        var submenu = mainMenu.querySelector(".submenu"); //Grabs the submenus under the mainmenu
+        submenu.style.display = "block" //Reveals the main menu
+        var subRect = submenu.getBoundingClientRect(); //Grabs the bounds of the submenu
+        var mainRect = mainMenu.getBoundingClientRect(); //Grabs the bounds of the mainmenu
+        var containerRect = container.getBoundingClientRect(); //Grabs the bounds of the monitor
+        if (containerRect.width <= mainRect.left + (subRect.width * 1.28) + mainRect.width){ //Checks if there is enough room to display the submenu without going outside the screen
+            submenu.style.left = -(subRect.width * 1.28) + "px" //Sets submenu to the left
         } else {
-            submenu.style.left = "100%";
+            submenu.style.left = "100%"; //Sets submenus to the right
         }
-        submenu.style.top = mainRect.height * (index + 1) + "px";
+        submenu.style.top = mainRect.height * (index + 1) + "px"; //Sets the top to align with the chosen main menu
     });
     mainMenu.addEventListener("mouseleave", function() {
         var submenu = mainMenu.querySelector(".submenu");
-        submenu.style.display = "none"
+        submenu.style.display = "none" //Hides the submenu
     })
 
 });
