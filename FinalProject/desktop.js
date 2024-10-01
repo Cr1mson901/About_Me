@@ -71,7 +71,7 @@ mainMenus.forEach((mainMenu, index) => {
         var subRect = submenu.getBoundingClientRect(); //Grabs the bounds of the submenu
         var mainRect = mainMenu.getBoundingClientRect(); //Grabs the bounds of the mainmenu
         var containerRect = container.getBoundingClientRect(); //Grabs the bounds of the monitor
-        if (containerRect.width <= mainRect.left + (subRect.width * 1.28) + mainRect.width){ //Checks if there is enough room to display the submenu without going outside the screen
+        if ((containerRect.left + containerRect.width) <= mainRect.left + (subRect.width * 1.28) + mainRect.width){ //Checks if there is enough room to display the submenu without going outside the screen
             submenu.style.left = -(subRect.width * 1.28) + "px" //Sets submenu to the left
         } else {
             submenu.style.left = "100%"; //Sets submenus to the right
