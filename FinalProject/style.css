@@ -270,17 +270,11 @@ li:hover{
     cursor: url("./ICON/pointer.cur"), default;
 }
 
-/* .mainmenu:hover > .submenu{
-    display:block;
-} */
-
 .submenu {
     position: absolute;
     display:none;
     list-style: none;
     padding: 0;
-    top: 50%;
-    left: 100%;
 }
 
 .submenu li{

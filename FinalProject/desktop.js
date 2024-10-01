@@ -64,17 +64,22 @@ logOutBTN.addEventListener("click", function(){
 
 // Submenu adjuster
 var mainMenus = document.querySelectorAll(".mainmenu")
-mainMenus.forEach(mainMenu => {
+mainMenus.forEach((mainMenu, index) => {
     mainMenu.addEventListener("mouseover", function() {
-        const submenu = mainMenu.querySelector(".submenu");
+        var submenu = mainMenu.querySelector(".submenu");
         submenu.style.display = "block"
-        subRect = submenu.getBoundingClientRect();
-        submenu.style.left = -(subRect.width * 1.3) + "px"
-        console.log(subRect.width)
-        console.log(submenu.paddingRight)
+        var subRect = submenu.getBoundingClientRect();
+        var mainRect = mainMenu.getBoundingClientRect();
+        var containerRect = container.getBoundingClientRect();
+        if (containerRect.width <= mainRect.left + (subRect.width * 1.28) + mainRect.width){
+            submenu.style.left = -(subRect.width * 1.28) + "px"
+        } else {
+            submenu.style.left = "100%";
+        }
+        submenu.style.top = mainRect.height * (index + 1) + "px";
     });
     mainMenu.addEventListener("mouseleave", function() {
-        const submenu = mainMenu.querySelector(".submenu");
+        var submenu = mainMenu.querySelector(".submenu");
         submenu.style.display = "none"
     })
 
