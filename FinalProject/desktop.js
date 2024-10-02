@@ -86,3 +86,38 @@ mainMenus.forEach((mainMenu, index) => {
     })
 
 });
+
+//Buttons
+//Grabs all buttons
+var icons = document.querySelectorAll("button")
+//If there is a mouse down in the document, unhighlight the icons
+document.addEventListener("mousedown", function() {
+    unhighlight()
+})
+
+//Adds listners for mousedown and dblclick
+icons.forEach(icon => {
+    icon.addEventListener("mousedown", function(e) {
+        // Stops the document from recieving the click
+        e.stopPropagation()
+        // Resets all of the icons on click
+        unhighlight()
+        var figure = this.querySelector("figure")
+        figure.style.background = "blue"
+        console.log("Clicked")
+    })
+    icon.addEventListener("dblclick", function(e) {
+        // Stops the document from recieving the click
+        e.stopPropagation()
+        //TODO Implement window opening
+        console.log("Double")
+    })
+})
+
+//Unhighlights all of the icons
+function unhighlight() {
+    icons.forEach(icon => {
+        var figure = icon.querySelector("figure")
+        figure.style.background = "none"
+    })
+}
