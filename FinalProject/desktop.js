@@ -15,6 +15,9 @@ var offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
 
 // When the user presses the mouse down over the element
 document.querySelectorAll('.draggable').forEach((dragElement) => {
+    dragElement.parentElement.onmousedown = function() {
+        level(this)
+    }
     dragElement.onmousedown = function(e) {
         e.preventDefault(); // Prevent default behavior
 
@@ -23,7 +26,6 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
         mouseY = e.clientY;
 
         let dragTable = dragElement.parentElement;
-        console.log(dragTable)
 
         // Listen for the movement
         document.onmousemove = function(e) {
@@ -127,4 +129,26 @@ function unhighlight() {
         figure.style.background = "none"
     })
     selected = false
+}
+
+//Levels out the items
+function level(top) {
+    let zStack = {}
+    let draggables = document.querySelectorAll('.draggable');
+    let maxZ = 0;
+    let minZ = Infinity;
+    draggables.forEach((dragElement) => {
+        //This does not grab the zIndex of the parent element for some reason
+        zIndex = parseInt(window.getComputedStyle(dragElement.parentElement).zIndex);
+        maxZ = Math.max(maxZ, zIndex);
+        minZ = Math.min(minZ, zIndex);
+        zStack[dragElement.parentElement] = zIndex;
+    })
+    // console.log(`the max is ${maxZ} and the min is ${minZ}`)
+    if (zStack[top] != maxZ){
+        top.style.zIndex = maxZ + 1;
+        draggables.forEach((dragElement) => {
+            dragElement.parentElement.style.zIndex = parseInt(getComputedStyle(dragElement.parentElement).zIndex) - minZ;
+        })
+    }
 }
