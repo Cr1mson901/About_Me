@@ -356,6 +356,17 @@ li:hover{
     height: 100%;
     width: 5%;
 }
+.rectangle {
+    position: absolute;
+    border: 1px black solid;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.minusIcon{
+    width: 80%;
+    height: 20%;
+}
 .winTitle{
     border-color: pink;
     border-style: dotted;
@@ -369,11 +380,19 @@ li:hover{
     border-style: double;
     width: 5%;
 }
+.minimizeIcon {
+    width: 20%;
+    height: 20%;
+}
 .maximize{
     position: relative;
     border-color: yellow;
     border-style: groove;
     width: 5%;
+}
+.maximizeIcon{
+    height: 80%;
+    width: 80%;
 }
 .body{
     position: relative;
