@@ -88,11 +88,14 @@ mainMenus.forEach((mainMenu, index) => {
 });
 
 //Buttons
+var selected = false
 //Grabs all buttons
 var icons = document.querySelectorAll("button")
 //If there is a mouse down in the document, unhighlight the icons
 document.addEventListener("mousedown", function() {
-    unhighlight()
+    if (selected){
+        unhighlight(selected)
+    }
 })
 
 //Adds listners for mousedown and dblclick
@@ -100,11 +103,14 @@ icons.forEach(icon => {
     icon.addEventListener("mousedown", function(e) {
         // Stops the document from recieving the click
         e.stopPropagation()
-        // Resets all of the icons on click
-        unhighlight()
+        // Resets icons if an icon is selected
+        if (selected) {
+            unhighlight()
+        }
         var figure = this.querySelector("figure")
         figure.style.background = "blue"
         console.log("Clicked")
+        selected = true
     })
     icon.addEventListener("dblclick", function(e) {
         // Stops the document from recieving the click
@@ -120,4 +126,5 @@ function unhighlight() {
         var figure = icon.querySelector("figure")
         figure.style.background = "none"
     })
+    selected = false
 }
