@@ -447,6 +447,7 @@ li:hover{
 /* Stylization for the bucket list */
 #list {
     width: 35%;
+    display: none;
 }
 #list .body{
     overflow-y: scroll;
