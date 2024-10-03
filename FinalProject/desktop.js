@@ -188,8 +188,8 @@ function openWindow(icon){
     let window = document.getElementById(icon.querySelector("figcaption").innerText)
     if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
         window.style.display = 'block'; //Reveals window
-        window.style.top = 0;
-        window.style.left = 0;
+        window.style.top = "5%";
+        window.style.left = "5%";
         focus(window) //Makes the window be on top when opened
     }
 }
