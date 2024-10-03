@@ -414,15 +414,15 @@ li:hover{
 }
 
 /* Stylization for the clocks */
-#time {
+#clock {
     width: 25vmin;
     height: 10vmin;
 }
-#time .windowHeader{
+#clock .windowHeader{
     height: 38%;
     font-size: 2vmin;
 }
-#time .body{
+#clock .body{
     height: 62%;
     font-size: 4.5vmin;
 
@@ -431,9 +431,9 @@ li:hover{
     align-items: center;
     justify-content: center;
 }
-#time .control-btn{
+#clock .control-btn{
     width: 12%;
 }
-#time .winTitle{
+#clock .winTitle{
     width: 64%;
 }
