@@ -153,3 +153,25 @@ function level(top) {
         })
     }
 }
+
+//A constant of 1 second
+const intervalSeconds = 1 * 1000;
+//Might be used later for weather getter
+const intervalMinutes = 15 * 60 * 1000;
+//Grabs the body for the clock window
+let time = document.getElementById("time").getElementsByClassName("body")[0];
+setInterval(() =>{
+    getTime()
+},intervalSeconds)
+
+//Gets the time
+function getTime(){
+    let d = new Date ();
+    let hours = d.getHours(); //Number of hours
+    let minutes = d.getMinutes(); //Number of minutes
+    if (minutes < 10){minutes = "0" + minutes}; //If 1 digit adds a 0
+    if (hours < 10){hours = "0" + hours} //If 1 digit adds a 0
+    time.innerText = `${hours}:${minutes}`; //Prints to screen
+}
+//Pulls the time on start up so text isn't visible
+getTime()

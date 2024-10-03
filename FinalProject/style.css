@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "7Segment";
+    src: url("./ICON/7-segments-display.ttf");
+}
+
 html, body{
     cursor: none;
     /* Makes the whole page unselectable so there isn't a huge blue highlight */
@@ -419,8 +424,12 @@ li:hover{
 }
 #time .body{
     height: 62%;
-    font-size: 5vmin;
-    text-align: center;
+    font-size: 4.5vmin;
+
+    font-family: "7Segment";
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #time .control-btn{
     width: 12%;
