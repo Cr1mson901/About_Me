@@ -179,14 +179,14 @@ getTime()
 //TODO Implement minimized icon
 var windows = document.querySelectorAll(".window").forEach((window) => {
     window.querySelector(".minus").addEventListener("click", function() {
-        window.style.display = 'none'
+        window.style.display = "none"
     })
 })
 
 //Opens a window when an icon is double clicked
 function openWindow(icon){
     let window = document.getElementById(icon.querySelector("figcaption").innerText)
-    if (window.style.display == 'none'){ //Checks if the window is hidden
+    if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
         window.style.display = 'block'; //Reveals window
         window.style.top = '50%';
         window.style.left = '50%';
