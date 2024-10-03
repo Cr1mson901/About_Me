@@ -16,7 +16,7 @@ var offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
 // When the user presses the mouse down over the element
 document.querySelectorAll('.draggable').forEach((dragElement) => {
     dragElement.parentElement.onmousedown = function() {
-        level(this)
+        focus(this)
     }
     dragElement.onmousedown = function(e) {
         e.preventDefault(); // Prevent default behavior
@@ -120,6 +120,7 @@ icons.forEach(icon => {
         //TODO Implement window opening
         this.querySelector("figure").style.background = "none"
         console.log("Open")
+        openWindow(this)
     })
 })
 
@@ -132,25 +133,17 @@ function unhighlight() {
     selected = false
 }
 
-//Levels out the items
-function level(top) {
-    let zStack = {}
+//focuss out the items
+function focus(top) {
     let draggables = document.querySelectorAll('.draggable');
-    let maxZ = 0;
-    let minZ = Infinity;
-    draggables.forEach((dragElement) => {
-        //This does not grab the zIndex of the parent element for some reason
-        zIndex = parseInt(window.getComputedStyle(dragElement.parentElement).zIndex);
-        maxZ = Math.max(maxZ, zIndex);
-        minZ = Math.min(minZ, zIndex);
-        zStack[dragElement.parentElement] = zIndex;
-    })
-    // console.log(`the max is ${maxZ} and the min is ${minZ}`)
-    if (zStack[top] != maxZ){
-        top.style.zIndex = maxZ + 1;
+    if (top.style.zIndex != draggables.length){
         draggables.forEach((dragElement) => {
-            dragElement.parentElement.style.zIndex = parseInt(getComputedStyle(dragElement.parentElement).zIndex) - minZ;
+            let currentZIndex = parseInt(getComputedStyle(dragElement.parentElement).zIndex)
+            console.log(currentZIndex)
+            if (top.style.zIndex < currentZIndex)
+            dragElement.parentElement.style.zIndex = currentZIndex - 1;
         })
+        top.style.zIndex = draggables.length
     }
 }
 
@@ -159,7 +152,7 @@ const intervalSeconds = 1 * 1000;
 //Might be used later for weather getter
 const intervalMinutes = 15 * 60 * 1000;
 //Grabs the body for the clock window
-let time = document.getElementById("time").getElementsByClassName("body")[0];
+let time = document.getElementById("clock").getElementsByClassName("body")[0];
 setInterval(() =>{
     getTime()
 },intervalSeconds)
@@ -175,3 +168,21 @@ function getTime(){
 }
 //Pulls the time on start up so text isn't visible
 getTime()
+
+//Hides the window when minimize is clicked
+var windows = document.querySelectorAll(".window").forEach((window) => {
+    window.querySelector(".minus").addEventListener("click", function() {
+        window.style.display = 'none'
+    })
+})
+
+//Opens a window when an icon is double clicked
+function openWindow(icon){
+    let window = document.getElementById(icon.querySelector("figcaption").innerText)
+    if (window.style.display == 'none'){ 
+        window.style.display = 'block';
+        window.style.top = '50%';
+        window.style.left = '50%';
+        focus(window)
+    }
+}
