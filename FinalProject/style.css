@@ -263,7 +263,7 @@ button {
     z-index: 1;
 }
 
-li{
+#toolchest li{
     border: 1px solid;
     height: 2vmin;
     width: 16vmin;
@@ -291,7 +291,7 @@ li:hover{
     padding-right: 120%;
 }
 
-#header {
+#toolchest #header {
    background-color: #A59F80;
 }
 #header:hover{
@@ -357,6 +357,7 @@ li:hover{
     width: 100%;
     height: 6%;
     cursor: grab;
+    font-size: 2vmin;
 }
 
 .minus {
@@ -426,7 +427,6 @@ li:hover{
 #clock .body{
     height: 62%;
     font-size: 4.5vmin;
-
     font-family: "7Segment";
     display: flex;
     align-items: center;
@@ -439,7 +439,24 @@ li:hover{
     width: 64%;
 }
 
+/* Stylization for the resume window */
 #resume {
-    font-size: 2vmin;
     display: none;
+}
+
+/* Stylization for the bucket list */
+#list {
+    width: 35%;
+}
+#list .body{
+    overflow-y: scroll;
+}
+#list .control-btn{
+    width: 8%;
+}
+#list li{
+    position: relative;
+    font-size: 2vmin;
+    width: 97%;
+    left: 3%;
 }
