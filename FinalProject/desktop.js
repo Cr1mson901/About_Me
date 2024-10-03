@@ -113,7 +113,7 @@ icons.forEach(icon => {
             unhighlight()
         }
         var figure = this.querySelector("figure")
-        figure.style.background = "blue"
+        figure.style.background = "rgba(200,200,255,0.2)"
         console.log("Clicked")
         selected = true
     })
