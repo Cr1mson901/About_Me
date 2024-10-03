@@ -262,8 +262,7 @@ button {
     cursor: move;
     z-index: 1;
 }
-
-#toolchest li{
+li{
     border: 1px solid;
     height: 2vmin;
     width: 16vmin;
@@ -460,4 +459,9 @@ li:hover{
     font-size: 2vmin;
     width: 97%;
     left: 3%;
+    border: 0px;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0;
+    font-style: italic;
 }
