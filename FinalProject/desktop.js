@@ -1,23 +1,24 @@
 window.onload = function() {
     var chestUser = document.getElementById("userName")
-    if (window.name){
+    if (window.name){ //Checks if the user accessed this page from the login screen
         chestUser.innerHTML = window.name;
     } else {
-        chestUser.innerHTML = "Cr1mson"
+        chestUser.innerHTML = "Cr1mson" //Default Name
     }
 }
 
-// Get the draggable element and the container
+// Gets screen container
 var container = document.getElementsByClassName("crt")[0];
 
 // Variables to store mouse position and offsets
 var offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
 
-// When the user presses the mouse down over the element
 document.querySelectorAll('.draggable').forEach((dragElement) => {
+    //Focusses on the element that the mouse is on
     dragElement.parentElement.onmousedown = function() {
         focus(this)
     }
+    //Dragging TODO update so the actual body doesn't move until mouse release, instead display a red outline in its place
     dragElement.onmousedown = function(e) {
         e.preventDefault(); // Prevent default behavior
 
@@ -61,7 +62,9 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
         };
     };
 });
+
 const logOutBTN = document.getElementById("exit");
+//Redirects to the login screen when the logout button is pressed in the toolchest
 logOutBTN.addEventListener("click", function(){
     window.location.href='login.html';
 })
@@ -133,16 +136,19 @@ function unhighlight() {
     selected = false
 }
 
-//focuss out the items
+//Focusses the top item
 function focus(top) {
+    //List of all draggable objects
     let draggables = document.querySelectorAll('.draggable');
+    //Checks if the element is already on top
     if (top.style.zIndex != draggables.length){
         draggables.forEach((dragElement) => {
             let currentZIndex = parseInt(getComputedStyle(dragElement.parentElement).zIndex)
-            console.log(currentZIndex)
-            if (top.style.zIndex < currentZIndex)
+            // console.log(currentZIndex) //Debugging
+            if (top.style.zIndex < currentZIndex) //If the element is currently above top element, decrease by 1
             dragElement.parentElement.style.zIndex = currentZIndex - 1;
         })
+        //Set our chosen element to the top
         top.style.zIndex = draggables.length
     }
 }
@@ -170,6 +176,7 @@ function getTime(){
 getTime()
 
 //Hides the window when minimize is clicked
+//TODO Implement minimized icon
 var windows = document.querySelectorAll(".window").forEach((window) => {
     window.querySelector(".minus").addEventListener("click", function() {
         window.style.display = 'none'
@@ -179,10 +186,10 @@ var windows = document.querySelectorAll(".window").forEach((window) => {
 //Opens a window when an icon is double clicked
 function openWindow(icon){
     let window = document.getElementById(icon.querySelector("figcaption").innerText)
-    if (window.style.display == 'none'){ 
-        window.style.display = 'block';
+    if (window.style.display == 'none'){ //Checks if the window is hidden
+        window.style.display = 'block'; //Reveals window
         window.style.top = '50%';
         window.style.left = '50%';
-        focus(window)
+        focus(window) //Makes the window be on top when opened
     }
 }
