@@ -118,7 +118,8 @@ icons.forEach(icon => {
         // Stops the document from recieving the click
         e.stopPropagation()
         //TODO Implement window opening
-        console.log("Double")
+        this.querySelector("figure").style.background = "none"
+        console.log("Open")
     })
 })
 
