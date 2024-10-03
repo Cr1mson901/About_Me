@@ -438,3 +438,8 @@ li:hover{
 #clock .winTitle{
     width: 64%;
 }
+
+#resume {
+    font-size: 2vmin;
+    display: none;
+}
