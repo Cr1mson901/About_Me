@@ -193,3 +193,54 @@ function openWindow(icon){
     }
     focus(window) //Makes the window be on top when opened
 }
+
+//Weather
+var generator = document.getElementById("weatherGenerator")
+generator.addEventListener("click", function(){
+    getLocation()
+})
+
+function getLocation() {
+if (navigator.geolocation) {
+    navigator.permissions &&
+    navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
+    if('granted' === PermissionStatus.state) {
+        navigator.geolocation.getCurrentPosition(function(geoposition) {
+            console.log(geoposition)
+            getWeather(geoposition) // Uses this position if location has been accepted
+        })
+    } else {
+    navigator.geolocation.getCurrentPosition(getWeather);
+    }
+    })
+    } else {
+        generator.innerText = "Geolocation is not supported by this browser.";
+    }
+}
+function getWeather(position){
+    console.log(position)
+    const url = 
+        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=92cd8cd8f4fb9e75e5bfd3035db58c91&units=imperial`
+    fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Check if data and data.main are present
+        if (data && data.main && data.main.temp) {
+            document.getElementById('temp').innerText = (`${data.main.temp}°F`);
+            document.getElementById('humidity').innerText = (`${data.main.humidity}%Humidity`)
+            document.getElementById("wind").innerText = (`${data.wind.speed}mphWinds`);
+            // let iconURL = `./icon/weather/${data.weather[0].icon}.png`
+            // document.getElementById("weather").style.backgroundImage = `url(${iconURL})`
+        } else {
+            console.error('Unexpected data structure:', data);
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}  
