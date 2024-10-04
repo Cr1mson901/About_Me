@@ -190,6 +190,6 @@ function openWindow(icon){
         window.style.display = 'block'; //Reveals window
         window.style.top = "5%";
         window.style.left = "5%";
-        focus(window) //Makes the window be on top when opened
     }
+    focus(window) //Makes the window be on top when opened
 }
