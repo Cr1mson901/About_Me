@@ -461,3 +461,47 @@ li:hover{
     width: 70%;
     height: 40%
 }
+#CDplayer .body{
+    display: flex;
+    flex-direction: row;
+    background-color: #C0C0C0;
+}
+#cdLeft {
+    border: greenyellow;
+    border-style: dotted;
+    flex-grow: 1;
+}
+#cdRight{
+    border: greenyellow;
+    border-style: dotted;
+    flex-grow: 1;
+}
+#cdRightHeader {
+    border: greenyellow;
+    border-style: dotted;
+    display: flex;
+    flex-direction: row;
+}
+#cdRightHeader p{
+    position: relative;
+    border: greenyellow;
+    border-style: dotted;
+    flex-grow: 1;
+    font-size: 90%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+#cdRightDisplay{
+    border: greenyellow;
+    border-style: dotted;
+    display: flex;
+    flex-direction: inherit;
+}
+#cdRightDisplay div{
+    border: red;
+    border-style: dotted;
+    flex-grow: 1;
+    height: 2vmin;
+    margin-right: 1%;
+    margin-left: 1%;
+}
