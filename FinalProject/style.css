@@ -423,7 +423,7 @@ li:hover{
 }
 
 #clock .body{
-    height: 10vmin;
+    height: 6vmin;
     font-size: 4.5vmin;
     font-family: "7Segment";
     display: flex;
