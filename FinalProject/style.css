@@ -32,7 +32,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    height: 100vh;
+    height: 100vmin;
     z-index: 0;
     cursor: url("./ICON/xCursor.cur"), default;
     background-color: #4C719E;
@@ -336,6 +336,8 @@ li:hover{
 /* CS for windows */
 .window {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     border-style:ridge;
     border-width: 7px;
     border-color: #A59F80;
@@ -354,7 +356,7 @@ li:hover{
     border-color: blue;
     background-color: #A59F80;
     width: 100%;
-    height: 6%;
+    height: 3vmin;
     cursor: grab;
     font-size: 2vmin;
 }
@@ -364,7 +366,6 @@ li:hover{
     border: greenyellow;
     border-style: dotted;
     height: 100%;
-    width: 4%;
 }
 .rectangle {
     position: absolute;
@@ -382,13 +383,12 @@ li:hover{
     border-style: dotted;
     position: relative;
     height: 100%;
-    width: 88%;
+    flex-grow: 1;
 }
 .minimize{
     position: relative;
     border-color: white;
     border-style: double;
-    width: 4%;
 }
 .minimizeIcon {
     width: 20%;
@@ -398,18 +398,20 @@ li:hover{
     position: relative;
     border-color: yellow;
     border-style: groove;
-    width: 4%;
 }
 .maximizeIcon{
     height: 80%;
     width: 80%;
+}
+.control-btn{
+    width: 2.5vmin;
 }
 .body{
     position: relative;
     border-color: rgb(69, 213, 181);
     border-style: inset;
     width: 100%;
-    height: 94%;
+    height: 51vmin;
     background-color: #86B0C9;
 }
 
@@ -419,23 +421,14 @@ li:hover{
     height: 10vmin;
     display: none;
 }
-#clock .windowHeader{
-    height: 38%;
-    font-size: 2vmin;
-}
+
 #clock .body{
-    height: 62%;
+    height: 10vmin;
     font-size: 4.5vmin;
     font-family: "7Segment";
     display: flex;
     align-items: center;
     justify-content: center;
-}
-#clock .control-btn{
-    width: 12%;
-}
-#clock .winTitle{
-    width: 64%;
 }
 
 /* Stylization for the resume window */
@@ -451,9 +444,6 @@ li:hover{
 #list .body{
     overflow-y: scroll;
 }
-#list .control-btn{
-    width: 8%;
-}
 #list li{
     position: relative;
     font-size: 2vmin;
@@ -464,4 +454,10 @@ li:hover{
     background-color: transparent;
     padding: 0;
     font-style: italic;
+}
+
+/* Stylization for the cdplayer*/
+#CDplayer {
+    width: 70%;
+    height: 40%
 }
