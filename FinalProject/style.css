@@ -283,6 +283,7 @@ li:hover{
     display:none;
     list-style: none;
     padding: 0;
+    white-space: nowrap;
 }
 
 .submenu li{
