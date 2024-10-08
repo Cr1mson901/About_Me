@@ -50,10 +50,10 @@ loginBTN.addEventListener("click", function(e){
         userNames.push(name);
         localStorage.setItem('userNames', JSON.stringify(userNames));
         console.log("login");
-        login()
+        login(name)
     } else {
         console.log("login");
-        login()
+        login(name)
     }
     window.name = name;
     //Resets inputField
@@ -115,8 +115,33 @@ function iconReset(selected) {
     accountLabel.innerHTML = '';
 }
 
-function login(){
-    window.location.href='desktop.html';
+function login(name) {
+    window.location.href = 'desktop.html';
+
+    let d = new Date();
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+
+    if (minutes < 10) { minutes = "0" + minutes; } //If 1 digit adds a 0
+    if (hours < 10) { hours = "0" + hours; } //If 1 digit adds a 0
+
+    let time = `${hours}:${minutes}`;
+    let loginDate = d.toDateString();
+
+    // Retrieve existing login times from localStorage
+    let loginTimes = JSON.parse(localStorage.getItem('loginTimes')) || {};
+
+    // Check if the user already exists in the stored login times, and if so, add time. If more then 2 times, remove the oldest time
+    if (loginTimes[name]) {
+        loginTimes[name].push([time, loginDate]);
+        if (loginTimes[name].length > 2){
+            loginTimes[name].shift()
+        }
+    } else {
+        loginTimes[name] = [[time, loginDate]];
+    }
+    // Store the updated login times back into localStorage
+    localStorage.setItem('loginTimes', JSON.stringify(loginTimes));
 }
 
 // TODO: Help button implementation//

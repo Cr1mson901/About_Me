@@ -1,9 +1,16 @@
 window.onload = function() {
-    var chestUser = document.getElementById("userName")
+    var chestUser = document.getElementById("userName");
+    var lastLoginDate = document.getElementById("lastOnlineDate");
+    var lastLoginTime = document.getElementById("lastOnlineTime");
     if (window.name){ //Checks if the user accessed this page from the login screen
         chestUser.innerHTML = window.name;
+        let lastLogin = JSON.parse(localStorage.getItem('loginTimes'))[window.name][0]
+        lastLoginDate.innerHTML = lastLogin[1]
+        lastLoginTime.innerHTML = lastLogin[0]
     } else {
         chestUser.innerHTML = "Cr1mson" //Default Name
+        lastLoginDate.innerHTML = "October 8th"
+        lastLoginTime.innerHTML = "Now"
     }
 }
 
