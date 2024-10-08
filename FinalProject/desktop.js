@@ -239,8 +239,8 @@ function getWeather(position){
         // Check if data and data.main are present
         if (data && data.main && data.main.temp) {
             document.getElementById('temp').innerText = (`${data.main.temp}°F`);
-            document.getElementById('humidity').innerText = (`${data.main.humidity}%Humidity`)
-            document.getElementById("wind").innerText = (`${data.wind.speed}mphWinds`);
+            document.getElementById('humidity').innerText = (`${data.main.humidity}% Humidity`)
+            document.getElementById("wind").innerText = (`${data.wind.speed}Mph Winds`);
             // let iconURL = `./icon/weather/${data.weather[0].icon}.png`
             // document.getElementById("weather").style.backgroundImage = `url(${iconURL})`
         } else {
