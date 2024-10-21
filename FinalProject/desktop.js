@@ -147,16 +147,22 @@ function unhighlight() {
 function focus(top) {
     //List of all draggable objects
     let draggables = document.querySelectorAll('.draggable');
+    let topHeader = top.querySelector('.draggable')
     //Checks if the element is already on top
     if (top.style.zIndex != draggables.length){
         draggables.forEach((dragElement) => {
             let currentZIndex = parseInt(getComputedStyle(dragElement.parentElement).zIndex)
             // console.log(currentZIndex) //Debugging
-            if (top.style.zIndex < currentZIndex) //If the element is currently above top element, decrease by 1
-            dragElement.parentElement.style.zIndex = currentZIndex - 1;
+            if (top.style.zIndex < currentZIndex){ //If the element is currently above top element, decrease by 1
+                dragElement.parentElement.style.zIndex = currentZIndex - 1;
+            }
+            if (dragElement != topHeader){
+                dragElement.style.background = "#808080"
+            }
         })
         //Set our chosen element to the top
         top.style.zIndex = draggables.length
+        topHeader.style.background = "#A59F80"
     }
 }
 
