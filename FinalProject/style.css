@@ -507,3 +507,13 @@ li:hover{
     margin-right: 1%;
     margin-left: 1%;
 }
+/* Stylization for Photos */
+#photos .body{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+#photos img{
+    /* width: 20vmin; */
+    height: 100%;
+}
