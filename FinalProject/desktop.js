@@ -76,6 +76,14 @@ logOutBTN.addEventListener("click", function(){
     window.location.href='login.html';
 })
 
+const shutdownBTN = document.getElementById("shutdown");
+//Turns the monitor off
+shutdownBTN.addEventListener("click", function(){
+    container.style.display = "none"
+    //Makes the monitor look like glass
+    document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+    })
+
 // Submenu adjuster
 var mainMenus = document.querySelectorAll(".mainmenu")
 mainMenus.forEach((mainMenu, index) => {
@@ -168,8 +176,7 @@ function focus(top) {
 
 //A constant of 1 second
 const intervalSeconds = 1 * 1000;
-//Might be used later for weather getter
-const intervalMinutes = 15 * 60 * 1000;
+
 //Grabs the body for the clock window
 let time = document.getElementById("clock").getElementsByClassName("body")[0];
 setInterval(() =>{

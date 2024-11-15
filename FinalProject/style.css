@@ -39,6 +39,7 @@ button {
 }
 
 .crt{
+    cursor: url("./ICON/xCursor.cur"), default;
     position: absolute;
     height: 80vmin;
     width: 108vmin;
@@ -521,7 +522,7 @@ li:hover{
 }
 .navHover{
     height: 100%;
-    width: 10%;
+    width: 15%;
 }
 #leftHover{
     position: absolute;
@@ -548,8 +549,8 @@ li:hover{
     height: 10%;
 }
 #navRight img{
-    right: 50%;
+    right: 30%;
 }
 #navLeft img{
-    left: 50%;
+    left: 30%;
 }
