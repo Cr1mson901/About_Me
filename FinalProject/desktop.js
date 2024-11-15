@@ -265,3 +265,29 @@ function getWeather(position){
         console.error('There was a problem with the fetch operation:', error);
     });
 }  
+
+//Implementation of image gallary
+let photos = document.getElementById("picture").querySelectorAll("img");
+let gallarySize = photos.length
+
+var currentPhoto = 0;
+photos[currentPhoto].style.display = "block"
+
+
+let rightArrow = document.getElementById("navRight")
+let leftArrow = document.getElementById("navLeft")
+
+rightArrow.addEventListener("click", function(){
+    photos[currentPhoto].style.display = "none"
+    currentPhoto = (currentPhoto + 1) % gallarySize
+    photos[currentPhoto].style.display = "block"
+    console.log(currentPhoto)
+})
+
+leftArrow.addEventListener("click", function(){
+    photos[currentPhoto].style.display = "none"
+    currentPhoto = gallarySize - (((gallarySize - currentPhoto) % gallarySize) + 1) //This is disgusting but works
+    console.log(currentPhoto)
+    photos[currentPhoto].style.display = "block"
+})
+
