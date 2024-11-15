@@ -508,12 +508,48 @@ li:hover{
     margin-left: 1%;
 }
 /* Stylization for Photos */
+#photos {
+    width: 90vmin;
+}
 #photos .body{
     display: flex;
     /* align-items: center; */
     justify-content: center;
 }
-#photos img{
-    /* width: 20vmin; */
+#photo img{
     height: 100%;
+}
+.navHover{
+    height: 100%;
+    width: 10%;
+}
+#leftHover{
+    position: absolute;
+    left: 0;
+}
+#leftHover:hover .nav{
+    display: flex;
+}
+#rightHover{
+    position: absolute;
+    right: 0;
+}
+#rightHover:hover .nav{
+    display: flex;
+}
+.nav{
+    display: none;
+    align-items: center;
+    height: 100%;
+    /* display: none; */
+}
+.nav img{
+    position: absolute;
+    height: 10%;
+}
+#navRight img{
+    right: 50%;
+}
+#navLeft img{
+    left: 50%;
 }
