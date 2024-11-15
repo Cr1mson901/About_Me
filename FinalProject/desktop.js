@@ -79,6 +79,7 @@ logOutBTN.addEventListener("click", function(){
 const shutdownBTN = document.getElementById("shutdown");
 //Turns the monitor off
 shutdownBTN.addEventListener("click", function(){
+    //TODO: Implement ability to turn back on via power button
     container.style.display = "none"
     //Makes the monitor look like glass
     document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
