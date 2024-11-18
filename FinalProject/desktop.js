@@ -79,15 +79,6 @@ logOutBTN.addEventListener("click", function(){
     window.location.href='login.html';
 })
 
-const shutdownBTN = document.getElementById("shutdown");
-//Turns the monitor off
-shutdownBTN.addEventListener("click", function(){
-    //TODO: Implement ability to turn back on via power button
-    container.style.display = "none"
-    //Makes the monitor look like glass
-    document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
-    })
-
 // Submenu adjuster
 var mainMenus = document.querySelectorAll(".mainmenu")
 mainMenus.forEach((mainMenu, index) => {
@@ -293,6 +284,22 @@ leftArrow.addEventListener("click", function(){
     console.log(currentPhoto)
     photos[currentPhoto].style.display = "block"
 })
+
+var powerOn = false;
+
+function powerSwitch(){
+    console.log("flick")
+    if (powerOn){
+        container.style.display = "none"
+        //Makes the monitor look like glass
+        document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        powerOn = false
+    } else {
+        container.style.display = "block"
+        document.getElementById("border").style.background = "#4C719E"
+        powerOn = true
+    }
+}
 
 //Power Button Scaling
 function scaleImageMap() {
