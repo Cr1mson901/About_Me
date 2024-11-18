@@ -10,6 +10,10 @@ window.onload = function() {
     figure.addEventListener("click", function() {
         iconSelect(this);
     })
+    const params = new URLSearchParams(window.location.search);
+    if (!params.get('from')) {
+        powerSwitch()
+    }
 };
 
 // Button implementation for login screen//
@@ -149,3 +153,47 @@ const helpBTN = document.getElementById("helpBTN");
 helpBTN.addEventListener("click", function() {
     //TODO: add pop up that explains the website and how to login
 })
+
+
+//Power button for login screen
+var powerOn = true;
+
+function powerSwitch(){
+    console.log("flick")
+    if (powerOn){
+        document.getElementsByClassName("crt")[0].style.display = "none"
+        //Makes the monitor look like glass
+        document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        powerOn = false
+    } else {
+        document.getElementsByClassName("crt")[0].style.display = "block"
+        document.getElementById("border").style.background = "#4C719E"
+        powerOn = true
+    }
+}
+
+//Power Button Scaling
+function scaleImageMap() {
+    const img = document.getElementById("border");
+    const areas = document.querySelectorAll("map[name='workmap'] area");
+
+    const imgWidth = img.offsetWidth;
+    const imgHeight = img.offsetHeight;
+
+    const originalWidth = 1080;
+    const originalHeight = 810;
+
+    const scaleX = imgWidth / originalWidth;
+    const scaleY = imgHeight / originalHeight;
+
+    areas.forEach(area => {
+        const originalCoords = area.dataset.coords.split(',').map(Number);
+        const scaledCoords = originalCoords.map((coord, index) =>
+            index % 2 === 0 ? Math.round(coord * scaleX) : Math.round(coord * scaleY)
+        );
+        area.coords = scaledCoords.join(',');
+    });
+}
+
+window.addEventListener("load", scaleImageMap);
+window.addEventListener("resize", scaleImageMap);
