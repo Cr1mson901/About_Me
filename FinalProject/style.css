@@ -21,6 +21,10 @@ button {
     cursor: url("./ICON/pointer.cur"), default;
 }
 
+area {
+    cursor: pointer;
+}
+
 /* Code for the Login Screen */
 #border{
     position: absolute;
