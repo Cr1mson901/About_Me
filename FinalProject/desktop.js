@@ -76,7 +76,7 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
 const logOutBTN = document.getElementById("exit");
 //Redirects to the login screen when the logout button is pressed in the toolchest
 logOutBTN.addEventListener("click", function(){
-    window.location.href='login.html';
+    window.location.href='login.html?from=desktop';
 })
 
 // Submenu adjuster
