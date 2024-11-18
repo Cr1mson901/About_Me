@@ -13,7 +13,10 @@ window.onload = function() {
         lastLoginTime.innerHTML = "Now"
     }
 }
-
+// onmousedown = function(e){
+//     console.log(e.clientX)
+//     console.log(e.clientY)
+// }
 // Gets screen container
 var container = document.getElementsByClassName("crt")[0];
 
@@ -291,3 +294,28 @@ leftArrow.addEventListener("click", function(){
     photos[currentPhoto].style.display = "block"
 })
 
+//Power Button Scaling
+function scaleImageMap() {
+    const img = document.getElementById("border");
+    const areas = document.querySelectorAll("map[name='workmap'] area");
+
+    const imgWidth = img.offsetWidth;
+    const imgHeight = img.offsetHeight;
+
+    const originalWidth = 1080;
+    const originalHeight = 810;
+
+    const scaleX = imgWidth / originalWidth;
+    const scaleY = imgHeight / originalHeight;
+
+    areas.forEach(area => {
+        const originalCoords = area.dataset.coords.split(',').map(Number);
+        const scaledCoords = originalCoords.map((coord, index) =>
+            index % 2 === 0 ? Math.round(coord * scaleX) : Math.round(coord * scaleY)
+        );
+        area.coords = scaledCoords.join(',');
+    });
+}
+
+window.addEventListener("load", scaleImageMap);
+window.addEventListener("resize", scaleImageMap);
