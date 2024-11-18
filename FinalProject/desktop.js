@@ -285,7 +285,7 @@ leftArrow.addEventListener("click", function(){
     photos[currentPhoto].style.display = "block"
 })
 
-var powerOn = false;
+var powerOn = true;
 
 function powerSwitch(){
     console.log("flick")
