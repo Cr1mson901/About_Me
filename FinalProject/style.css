@@ -21,11 +21,6 @@ button {
     cursor: url("./ICON/pointer.cur"), default;
 }
 
-/* TODO: Implement powerBTN */
-#powerBTN{
-    all: unset;
-}
-
 /* Code for the Login Screen */
 #border{
     position: absolute;
@@ -511,6 +506,7 @@ li:hover{
 /* Stylization for Photos */
 #photos {
     width: 90vmin;
+    display: none;
 }
 #photos .body{
     display: flex;
