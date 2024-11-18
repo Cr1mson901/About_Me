@@ -10,8 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="monitor">
+        <img id="border" src="./ICON/crtBorder.png" draggable="false" usemap="#workmap">
+        <map name="workmap">
+            <area shape="rect" coords="900,755,965,800" data-coords="900,755,965,800" onclick="powerSwitch()">
+        </map>
+    </div>
     <div class="crt">
-        <img id="border" src="./ICON/crtBorder.png" draggable="false">
         <div class="box">
             <div class="innerBox"> 
                 <figure class="userIcon" id="root">
