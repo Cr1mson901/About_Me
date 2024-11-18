@@ -10,7 +10,7 @@
     <div class="monitor">
         <img id="border" src="./ICON/crtBorder.png" draggable="false" usemap="#workmap">
         <map name="workmap">
-            <area shape="rect" coords="900,755,965,800" data-coords="900,755,965,800" href="login.html">
+            <area shape="rect" coords="900,755,965,800" data-coords="900,755,965,800" onclick="powerSwitch()">
         </map>
     </div>
     <div class="crt">
@@ -40,7 +40,7 @@
                     </ul>
                 </li>
                 <li id="exit">Log Out</li>
-                <li id="shutdown">Shutdown</li>
+                <li id="shutdown" onclick="powerSwitch()">Shutdown</li>
             </ul>
         </div>
         <div id="iconBox">
