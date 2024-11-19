@@ -34,8 +34,50 @@ area {
     height: 100vmin;
     z-index: 0;
     cursor: url("./ICON/xCursor.cur"), default;
-    background-color: #4C719E;
+    background: radial-gradient(circle at center, #5B87BD, #3D5A7E)
 }
+
+/* An attempt at the crt power off effect */
+.shutoff.crt::after{
+    animation: powerOff .75s forwards;
+    opacity: 1;
+}
+
+@keyframes powerOff {
+    0% {
+      height: 80vmin;
+    }
+    10% {
+      background: radial-gradient(circle at center, white, rgb(179, 166, 166))
+    }
+    60% {
+      height: 40px;
+      border-radius: 0%;
+    }
+    70% {
+      height: 20px;
+      border-radius: 20%;
+    }
+    80% {
+      height: 10px;
+      width: 108vmin;
+    }
+    90% {
+      width: 54vmin;
+      height: 5px;
+    }
+    95% {
+      height: 2px;
+    }
+    97% {
+      width: 108vmin;
+    }
+    100% {
+      height: 1px;
+      width: 0;
+      background: radial-gradient(circle at center, white, rgb(179, 166, 166))
+    }
+  }
 
 .crt{
     cursor: url("./ICON/xCursor.cur"), default;
