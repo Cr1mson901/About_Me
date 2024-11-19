@@ -163,6 +163,7 @@ helpBTN.addEventListener("click", function() {
 
 //Power button for login screen
 var powerOn = true;
+var shuttingOff = false;
 
 function powerSwitch(){
     console.log("flick")
@@ -170,12 +171,18 @@ function powerSwitch(){
     let border = document.getElementById("border")
     let container = document.getElementsByClassName("crt")[0]
     if (powerOn){
+        shuttingOff = true;
         container.classList.add("shutoff")
         screen.style.display = "none"
         //Makes the monitor look like glass
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        //After .75 secs, no longer shutting down
+        setTimeout(function(){
+            shuttingOff = false;
+        }, 750)
         powerOn = false
-    } else {
+    //Prevents the interuption of the shutting down animation
+    } else if(!shuttingOff){
         container.classList.remove("shutoff")
         screen.style.display = "unset"
         border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"

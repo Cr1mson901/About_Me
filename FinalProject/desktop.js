@@ -284,18 +284,25 @@ leftArrow.addEventListener("click", function(){
 })
 
 var powerOn = true;
+var shuttingOff = false
 
 function powerSwitch(){
     console.log("flick")
     let screen = document.getElementsByClassName("screen")[0]
     let border = document.getElementById("border")
     if (powerOn){
+        shuttingOff = true
         container.classList.add("shutoff")
         screen.style.display = "none"
         //Makes the monitor look like glass
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        // Allows for the animation to complete
+        setTimeout(function(){
+            shuttingOff = false;
+        }, 750)
         powerOn = false
-    } else {
+    //Does not power back on if it is shutting off
+    } else if(!shuttingOff) {
         container.classList.remove("shutoff")
         screen.style.display = "unset"
         border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
