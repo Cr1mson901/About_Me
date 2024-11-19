@@ -11,8 +11,14 @@ window.onload = function() {
         iconSelect(this);
     })
     const params = new URLSearchParams(window.location.search);
+    
     if (!params.get('from')) {
-        powerSwitch()
+        let screen = document.getElementsByClassName("screen")[0]
+        let border = document.getElementById("border")
+        let container = document.getElementsByClassName("crt")[0]
+        powerOn = false
+        screen.style.display = "none"
+        border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
     }
 };
 
@@ -160,14 +166,19 @@ var powerOn = true;
 
 function powerSwitch(){
     console.log("flick")
+    let screen = document.getElementsByClassName("screen")[0]
+    let border = document.getElementById("border")
+    let container = document.getElementsByClassName("crt")[0]
     if (powerOn){
-        document.getElementsByClassName("crt")[0].style.display = "none"
+        container.classList.add("shutoff")
+        screen.style.display = "none"
         //Makes the monitor look like glass
-        document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
         powerOn = false
     } else {
-        document.getElementsByClassName("crt")[0].style.display = "block"
-        document.getElementById("border").style.background = "#4C719E"
+        container.classList.remove("shutoff")
+        screen.style.display = "unset"
+        border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
         powerOn = true
     }
 }

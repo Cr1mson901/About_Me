@@ -275,13 +275,11 @@ rightArrow.addEventListener("click", function(){
     photos[currentPhoto].style.display = "none"
     currentPhoto = (currentPhoto + 1) % gallarySize
     photos[currentPhoto].style.display = "block"
-    console.log(currentPhoto)
 })
 
 leftArrow.addEventListener("click", function(){
     photos[currentPhoto].style.display = "none"
     currentPhoto = gallarySize - (((gallarySize - currentPhoto) % gallarySize) + 1) //This is disgusting but works
-    console.log(currentPhoto)
     photos[currentPhoto].style.display = "block"
 })
 
@@ -289,14 +287,18 @@ var powerOn = true;
 
 function powerSwitch(){
     console.log("flick")
+    let screen = document.getElementsByClassName("screen")[0]
+    let border = document.getElementById("border")
     if (powerOn){
-        container.style.display = "none"
+        container.classList.add("shutoff")
+        screen.style.display = "none"
         //Makes the monitor look like glass
-        document.getElementById("border").style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+        border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
         powerOn = false
     } else {
-        container.style.display = "block"
-        document.getElementById("border").style.background = "#4C719E"
+        container.classList.remove("shutoff")
+        screen.style.display = "unset"
+        border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
         powerOn = true
     }
 }
