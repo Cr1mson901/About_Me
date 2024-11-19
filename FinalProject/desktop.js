@@ -187,8 +187,6 @@ function getTime(){
     if (hours < 10){hours = "0" + hours} //If 1 digit adds a 0
     time.innerText = `${hours}:${minutes}`; //Prints to screen
 }
-//Pulls the time on start up so text isn't visible
-getTime()
 
 //Hides the window when minimize is clicked
 //TODO Implement minimized icon
@@ -334,4 +332,22 @@ function scaleImageMap() {
 }
 
 window.addEventListener("load", scaleImageMap);
+window.addEventListener("resize", boundsCheck);
 window.addEventListener("resize", scaleImageMap);
+
+function boundsCheck(){
+    Array.from(document.querySelectorAll('.draggable')).filter(s => window.getComputedStyle(s.parentElement).getPropertyValue('display') != 'none').forEach((dragElement) => {
+        let dragTable = dragElement.parentElement
+        let dragRect = dragTable.getBoundingClientRect();
+        let containerRect = container.getBoundingClientRect();
+
+        if (dragRect.right >= containerRect.right - 10 || dragRect.left <= containerRect.left + 10){
+            // console.log("Outside")
+            dragTable.style.left = "5%"
+        }
+        if (dragRect.top <= containerRect.top - 10 || dragRect.bottom >= containerRect.bottom + 10){
+            // console.log("Outside vertical")
+            dragTable.style.top = "5%";
+        }
+    })
+}
