@@ -217,3 +217,12 @@ function scaleImageMap() {
 
 window.addEventListener("load", scaleImageMap);
 window.addEventListener("resize", scaleImageMap);
+
+//Help Button implementation
+let helpWin = document.getElementById("helpWin")
+function openHelpWindow(){
+    helpWin.style.display = "flex"
+}
+function closeHelpWindow(){
+    helpWin.style.display = "none"
+}
