@@ -12,11 +12,18 @@ window.onload = function() {
         lastLoginDate.innerHTML = "October 8th"
         lastLoginTime.innerHTML = "Now"
     }
+
+    var crtState = localStorage.getItem('crtState') || 'enabled'
+    if (crtState == "disabled"){
+        container.classList.add("poweroff")
+    }
 }
+//Testing purposes to get the coordinates of objects
 // onmousedown = function(e){
 //     console.log(e.clientX)
 //     console.log(e.clientY)
 // }
+
 // Gets screen container
 var container = document.getElementsByClassName("crt")[0];
 
@@ -292,7 +299,9 @@ function powerSwitch(){
         shuttingOff = true
         screen.style.display = "none"
         container.classList.add("shutoff")
-        container.classList.add("poweroff")
+        if (crtState == "enabled"){
+            container.classList.add("poweroff")
+        }
         //Makes the monitor look like glass
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
         // Allows for the animation to complete
@@ -303,7 +312,9 @@ function powerSwitch(){
     //Does not power back on if it is shutting off
     } else if(!shuttingOff) {
         container.classList.remove("shutoff")
-        container.classList.remove("poweroff")
+        if (crtState == "enabled"){
+            container.classList.remove("poweroff")
+        }
         screen.style.display = "unset"
         border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
         powerOn = true

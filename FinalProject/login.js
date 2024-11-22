@@ -1,7 +1,8 @@
 var userNames = JSON.parse(localStorage.getItem("userNames") || '[]');
 var iconSelected = false;
 var accountLabel = document.getElementById("account");
-var crtState = localStorage.getItem("crtState");
+var crtState = localStorage.getItem("crtState") || "enabled";
+let container = document.getElementsByClassName("crt")[0]
 
 //Adds all locally stored usernames//
 window.onload = function() {
@@ -21,6 +22,9 @@ window.onload = function() {
         powerOn = false
         screen.style.display = "none"
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
+    }
+    if (crtState == "disabled"){
+        container.classList.add("poweroff")
     }
 };
 
@@ -128,6 +132,9 @@ function iconReset(selected) {
 }
 
 function login(name) {
+    //Store whether the crt effect is on or off
+    localStorage.setItem('crtState', crtState);
+
     window.location.href = 'desktop.html';
 
     let d = new Date();
@@ -154,7 +161,6 @@ function login(name) {
     }
     // Store the updated login times back into localStorage
     localStorage.setItem('loginTimes', JSON.stringify(loginTimes));
-    localStorage.setItem('crtState', crtState);
 }
 
 //Power button for login screen
@@ -165,12 +171,14 @@ function powerSwitch(){
     console.log("flick")
     let screen = document.getElementsByClassName("screen")[0]
     let border = document.getElementById("border")
-    let container = document.getElementsByClassName("crt")[0]
+
     if (powerOn){
         shuttingOff = true
         screen.style.display = "none"
         container.classList.add("shutoff")
-        container.classList.add("poweroff")
+        if (crtState == "enabled"){
+            container.classList.add("poweroff")
+        }
         //Makes the monitor look like glass
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
         // Allows for the animation to complete
@@ -181,7 +189,9 @@ function powerSwitch(){
     //Does not power back on if it is shutting off
     } else if(!shuttingOff) {
         container.classList.remove("shutoff")
-        container.classList.remove("poweroff")
+        if (crtState == "enabled") {
+            container.classList.remove("poweroff")
+        }
         screen.style.display = "unset"
         border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
         powerOn = true
@@ -225,9 +235,11 @@ function closeHelpWindow(){
 
 //Toggle CRT state
 function toggleCRT(){
-    if (crtState){
-        crtState = false
+    if (crtState == "enabled"){
+        crtState = "disabled";
+        container.classList.add("poweroff")
     } else {
-        crtState = true
+        crtState = "enabled";
+        container.classList.remove("poweroff")
     }
 }
