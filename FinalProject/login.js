@@ -1,6 +1,8 @@
 var userNames = JSON.parse(localStorage.getItem("userNames") || '[]');
 var iconSelected = false;
 var accountLabel = document.getElementById("account");
+var crtState = localStorage.getItem("crtState");
+
 //Adds all locally stored usernames//
 window.onload = function() {
     userNames.forEach((name) => addUser(name));
@@ -152,14 +154,8 @@ function login(name) {
     }
     // Store the updated login times back into localStorage
     localStorage.setItem('loginTimes', JSON.stringify(loginTimes));
+    localStorage.setItem('crtState', crtState);
 }
-
-// TODO: Help button implementation//
-const helpBTN = document.getElementById("helpBTN");
-helpBTN.addEventListener("click", function() {
-    //TODO: add pop up that explains the website and how to login
-})
-
 
 //Power button for login screen
 var powerOn = true;
@@ -225,4 +221,13 @@ function openHelpWindow(){
 }
 function closeHelpWindow(){
     helpWin.style.display = "none"
+}
+
+//Toggle CRT state
+function toggleCRT(){
+    if (crtState){
+        crtState = false
+    } else {
+        crtState = true
+    }
 }
