@@ -613,3 +613,32 @@ li:hover{
 #navLeft img{
     left: 30%;
 }
+
+#calendar{
+    width: 30vmin;
+    height: 25vmin;
+}
+#calendar .body{
+    background-color: #D2D2D2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.calendarRow{
+    border: black, solid;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+.calendarCell{
+    flex-grow: 1;
+    height: 100%;
+    align-content: center;
+    /* Clamp defines a range and rate of change for the text */
+    font-size: clamp(1px, 1.5vmin, 100px);
+    flex-basis: 100%;
+    text-align: center;
+}
