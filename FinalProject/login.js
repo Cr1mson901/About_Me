@@ -235,11 +235,16 @@ function closeHelpWindow(){
 
 //Toggle CRT state
 function toggleCRT(){
+    crtBtnLbl = document.getElementById("crtBtnLbl")
     if (crtState == "enabled"){
         crtState = "disabled";
+        crtBtnLbl.innerText = "ON"
+        crtBtnLbl.style.color = "lightgreen"
         container.classList.add("poweroff")
     } else {
         crtState = "enabled";
+        crtBtnLbl.innerText = "OFF"
+        crtBtnLbl.style.color = "red"
         container.classList.remove("poweroff")
     }
 }
