@@ -12,8 +12,6 @@ window.onload = function() {
         lastLoginDate.innerHTML = "October 8th"
         lastLoginTime.innerHTML = "Now"
     }
-
-    var crtState = localStorage.getItem('crtState') || 'enabled'
     if (crtState == "disabled"){
         container.classList.add("poweroff")
     }
@@ -26,6 +24,9 @@ window.onload = function() {
 
 // Gets screen container
 var container = document.getElementsByClassName("crt")[0];
+
+//Gets if the crt effect is enabled
+var crtState = localStorage.getItem("crtState") || "enabled";
 
 // Variables to store mouse position and offsets
 var offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
