@@ -297,7 +297,7 @@ photos[currentPhoto].style.display = "block"
 
 let rightArrow = document.getElementById("navRight")
 let leftArrow = document.getElementById("navLeft")
-
+//TODO: Implement keyboard controls
 rightArrow.addEventListener("click", function(){
     //Hides the current photo
     photos[currentPhoto].style.display = "none"
