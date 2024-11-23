@@ -208,7 +208,7 @@ var windows = document.querySelectorAll(".window").forEach((window) => {
 function openWindow(icon){
     let window = document.getElementById(icon.querySelector("figcaption").innerText)
     if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
-        window.style.display = 'block'; //Reveals window
+        window.style.display = 'flex'; //Reveals window
         window.style.top = "5%";
         window.style.left = "5%";
     }

@@ -462,6 +462,7 @@ li:hover{
     height: 50vmin;
     background-color: #86B0C9;
     bottom: 0;
+    flex-grow: 1;
 }
 
 /* Stylization for the clocks */
