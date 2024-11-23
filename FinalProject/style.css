@@ -617,12 +617,14 @@ li:hover{
 #calendar{
     width: 30vmin;
     height: 25vmin;
+    display: none;
 }
 #calendar .body{
     background-color: #D2D2D2;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    font-style: italic;
 }
 .calendarRow{
     border: black, solid;

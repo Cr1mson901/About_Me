@@ -22,6 +22,7 @@ window.onload = function() {
     if (crtState == "disabled"){
         container.classList.add("poweroff")
     }
+    buildCalendar(new Date())
 }
 //Testing purposes to get the coordinates of objects
 // onmousedown = function(e){
@@ -399,4 +400,29 @@ function boundsCheck(){
             dragTable.style.top = "5%";
         }
     })
+}
+
+//Original Logic for the creation of the calendar... Might suck a lot
+let monthList = {0:"January", 1:"February", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"}
+function buildCalendar(d){
+    let month = d.getMonth()
+    document.getElementById("month").innerText = monthList[month]
+
+    let year = d.getFullYear()
+    document.getElementById("year").innerText = year
+
+    let firstDay = new Date((month + 1) + " 1 " + year).getDay()
+    // console.log(firstDay)
+    let daysInMonth = new Date(year, (month + 1), 0).getDate()
+    console.log(daysInMonth)
+    //Iterates through the cells starting with the first day of the month
+    for (let i = 0; i < daysInMonth; i++){
+        day = document.getElementById("c" + (firstDay + i))
+        day.innerText = i + 1
+        if (d.getDate() == i + 1){
+            day.style.color = "red"
+        } else{
+            day.style.color = "black"
+        }
+    }
 }
