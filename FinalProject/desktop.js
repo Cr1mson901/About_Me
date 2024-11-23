@@ -431,8 +431,11 @@ function buildCalendar(d){
 
 //Maximize
 function maximize(window){
-    window.style.width = "98%"
-    window.style.height = "98%"
-    window.style.left = "1%"
-    window.style.top = "1%"
+    if (window.classList.contains("maximized")){
+        window.classList.remove("maximized")
+    }else{
+        window.classList.add("maximized")
+        window.style.left = "1%";
+        window.style.top = "1%";
+    }
 }
