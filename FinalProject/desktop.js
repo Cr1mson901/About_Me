@@ -232,8 +232,8 @@ function openWindow(icon){
     if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
         window.style.display = 'flex'; //Reveals window
         //Top left corner to ensure all windows will open within the bounds of the screen
-        window.style.top = "5%";
-        window.style.left = "5%";
+        window.style.top = "1%";
+        window.style.left = "1%";
     }
     focus(window) //Makes the window be on top when opened
 }
@@ -394,11 +394,11 @@ function boundsCheck(){
         //Checks if any open windows were moved outside the screen when resized
         if (dragRect.right >= containerRect.right - 10 || dragRect.left <= containerRect.left + 10){
             // console.log("Outside")
-            dragTable.style.left = "5%"
+            dragTable.style.left = "1%"
         }
         if (dragRect.top <= containerRect.top - 10 || dragRect.bottom >= containerRect.bottom + 10){
             // console.log("Outside vertical")
-            dragTable.style.top = "5%";
+            dragTable.style.top = "1%"
         }
     })
 }
@@ -427,4 +427,12 @@ function buildCalendar(d){
             day.style.color = "black"
         }
     }
+}
+
+//Maximize
+function maximize(window){
+    window.style.width = "98%"
+    window.style.height = "98%"
+    window.style.left = "1%"
+    window.style.top = "1%"
 }
