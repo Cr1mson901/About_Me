@@ -18,12 +18,11 @@ window.onload = function() {
     if (!params.get('from')) {
         let screen = document.getElementsByClassName("screen")[0]
         let border = document.getElementById("border")
-        let container = document.getElementsByClassName("crt")[0]
         powerOn = false
         screen.style.display = "none"
+        container.classList.add("poweroff")
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
-    }
-    if (crtState == "disabled"){
+    } else if (crtState == "disabled"){
         container.classList.add("poweroff")
     }
 };
