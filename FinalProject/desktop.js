@@ -1,17 +1,24 @@
 window.onload = function() {
+    //Pulls the html elements for the user in the tool box
     var chestUser = document.getElementById("userName");
     var lastLoginDate = document.getElementById("lastOnlineDate");
     var lastLoginTime = document.getElementById("lastOnlineTime");
-    if (window.name){ //Checks if the user accessed this page from the login screen
+
+    //Checks if the user accessed this page from the login screen
+    if (window.name){ 
         chestUser.innerHTML = window.name;
+        //Checks local storage for that last time this user logged in
         let lastLogin = JSON.parse(localStorage.getItem('loginTimes'))[window.name][0]
         lastLoginDate.innerHTML = lastLogin[1]
         lastLoginTime.innerHTML = lastLogin[0]
     } else {
-        chestUser.innerHTML = "Cr1mson" //Default Name
+        //Provides a default set of information if the website is accessed directly
+        chestUser.innerHTML = "Cr1mson"
         lastLoginDate.innerHTML = "October 8th"
         lastLoginTime.innerHTML = "Now"
     }
+    
+    //Checks the stored settings for the crt effect
     if (crtState == "disabled"){
         container.classList.add("poweroff")
     }
@@ -22,10 +29,10 @@ window.onload = function() {
 //     console.log(e.clientY)
 // }
 
-// Gets screen container
+// Gets the bounding area for the elements of the monitor
 var container = document.getElementsByClassName("crt")[0];
 
-//Gets if the crt effect is enabled
+//CRT activation status from local memory
 var crtState = localStorage.getItem("crtState") || "enabled";
 
 // Variables to store mouse position and offsets
@@ -34,6 +41,7 @@ var offsetX = 0, offsetY = 0, mouseX = 0, mouseY = 0;
 document.querySelectorAll('.draggable').forEach((dragElement) => {
     //Focusses on the element that the mouse is on
     dragElement.parentElement.onmousedown = function() {
+        //On mouse down the window will pop to the top via the focus function
         focus(this)
     }
     //Dragging TODO update so the actual body doesn't move until mouse release, instead display a red outline in its place
@@ -44,6 +52,7 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
+        //Drag table is the window 
         let dragTable = dragElement.parentElement;
 
         // Listen for the movement
@@ -81,18 +90,20 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
     };
 });
 
-const logOutBTN = document.getElementById("exit");
-//Redirects to the login screen when the logout button is pressed in the toolchest
-logOutBTN.addEventListener("click", function(){
+//Moves the user to the login screen
+function logOut(){
     window.location.href='login.html?from=desktop';
-})
+}
 
-// Submenu adjuster
+// Changes which side the submenus come out based on how close to the right edge they are
+//Grabs all the top menus in the toolbox
 var mainMenus = document.querySelectorAll(".mainmenu")
+
+//Enumeration of the menus
 mainMenus.forEach((mainMenu, index) => {
     mainMenu.addEventListener("mouseover", function() {
         var submenu = mainMenu.querySelector(".submenu"); //Grabs the submenus under the mainmenu
-        submenu.style.display = "block" //Reveals the main menu
+        submenu.style.display = "block" //Reveals the sub menu
         var subRect = submenu.getBoundingClientRect(); //Grabs the bounds of the submenu
         var mainRect = mainMenu.getBoundingClientRect(); //Grabs the bounds of the mainmenu
         var containerRect = container.getBoundingClientRect(); //Grabs the bounds of the monitor
@@ -107,40 +118,46 @@ mainMenus.forEach((mainMenu, index) => {
         var submenu = mainMenu.querySelector(".submenu");
         submenu.style.display = "none" //Hides the submenu
     })
-
 });
 
-//Buttons
-var selected = false
-//Grabs all buttons
-var icons = document.querySelectorAll("button")
+//Icons
+//Could implement this to store the icon name that is selected so I don't have to query all icons to turn off the highlight
+var iconSelected = false
+
 //If there is a mouse down in the document, unhighlight the icons
 document.addEventListener("mousedown", function() {
-    if (selected){
-        unhighlight(selected)
+    if (iconSelected){
+        unhighlight()
     }
 })
 
-//Adds listners for mousedown and dblclick
+//Grabs all the icons
+var icons = document.querySelectorAll("button")
+
+//Adds listners for mousedown and dblclicks on icons
 icons.forEach(icon => {
     icon.addEventListener("mousedown", function(e) {
         // Stops the document from recieving the click
         e.stopPropagation()
-        // Resets icons if an icon is selected
-        if (selected) {
+        // Resets icons if an icon is Selected
+        if (iconSelected) {
             unhighlight()
         }
         var figure = this.querySelector("figure")
+        //Gives a highlight effect to the icon
         figure.style.background = "rgba(200,200,255,0.2)"
         console.log("Clicked")
-        selected = true
+        //States there is an icon that is currently selected
+        iconSelected = true
     })
     icon.addEventListener("dblclick", function(e) {
         // Stops the document from recieving the click
         e.stopPropagation()
-        //TODO Implement window opening
+
+        //Unhighlighs the icon
         this.querySelector("figure").style.background = "none"
         console.log("Open")
+        //Opens the window with the same name as the figcaption of the icon clicked
         openWindow(this)
     })
 })
@@ -151,7 +168,8 @@ function unhighlight() {
         var figure = icon.querySelector("figure")
         figure.style.background = "none"
     })
-    selected = false
+    //Declares that no icon is currently Selected
+    iconSelected = false
 }
 
 //Focusses the top item
@@ -168,11 +186,13 @@ function focus(top) {
                 dragElement.parentElement.style.zIndex = currentZIndex - 1;
             }
             if (dragElement != topHeader){
+                //Grays out window headers that are not in focus
                 dragElement.style.background = "#808080"
             }
         })
         //Set our chosen element to the top
         top.style.zIndex = draggables.length
+        //Changes the focused header to the blueish color
         topHeader.style.background = "#A59F80"
     }
 }
@@ -209,6 +229,7 @@ function openWindow(icon){
     let window = document.getElementById(icon.querySelector("figcaption").innerText)
     if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
         window.style.display = 'flex'; //Reveals window
+        //Top left corner to ensure all windows will open within the bounds of the screen
         window.style.top = "5%";
         window.style.left = "5%";
     }
@@ -220,7 +241,7 @@ var generator = document.getElementById("weatherGenerator")
 generator.addEventListener("click", function(){
     getLocation()
 })
-
+//TODO: Need to revisit this code, can fix/reduce
 function getLocation() {
 if (navigator.geolocation) {
     navigator.permissions &&
@@ -278,17 +299,24 @@ let rightArrow = document.getElementById("navRight")
 let leftArrow = document.getElementById("navLeft")
 
 rightArrow.addEventListener("click", function(){
+    //Hides the current photo
     photos[currentPhoto].style.display = "none"
+    //Math that allows for wrapping around the right side of the list
     currentPhoto = (currentPhoto + 1) % gallarySize
+    //Displays the Next photo
     photos[currentPhoto].style.display = "block"
 })
 
 leftArrow.addEventListener("click", function(){
+    //Hides the current photo
     photos[currentPhoto].style.display = "none"
+    //Math that allows for wrapping left of the list
     currentPhoto = gallarySize - (((gallarySize - currentPhoto) % gallarySize) + 1) //This is disgusting but works
+    //Displays the next photo
     photos[currentPhoto].style.display = "block"
 })
 
+//Power to the monitor is on/ Monitor is not in the shutting off animation
 var powerOn = true;
 var shuttingOff = false
 
@@ -300,6 +328,7 @@ function powerSwitch(){
         shuttingOff = true
         screen.style.display = "none"
         container.classList.add("shutoff")
+        //If the crt is enabled, remove when the monitor turns off
         if (crtState == "enabled"){
             container.classList.add("poweroff")
         }
@@ -313,10 +342,13 @@ function powerSwitch(){
     //Does not power back on if it is shutting off
     } else if(!shuttingOff) {
         container.classList.remove("shutoff")
+        //If the crt is enabled, add it back
         if (crtState == "enabled"){
             container.classList.remove("poweroff")
         }
+        //Unsets because the display type is not specified
         screen.style.display = "unset"
+        //Adds back the blue background color
         border.style.background = "radial-gradient(circle at center, #5B87BD, #3D5A7E)"
         powerOn = true
     }
@@ -325,11 +357,13 @@ function powerSwitch(){
 //Power Button Scaling
 function scaleImageMap() {
     const img = document.getElementById("border");
+    //Grabs the areas of the workmap
     const areas = document.querySelectorAll("map[name='workmap'] area");
 
     const imgWidth = img.offsetWidth;
     const imgHeight = img.offsetHeight;
 
+    //Numbers that were used while implementing, roughly the size on a 1080 monitor
     const originalWidth = 1080;
     const originalHeight = 810;
 
@@ -355,6 +389,7 @@ function boundsCheck(){
         let dragRect = dragTable.getBoundingClientRect();
         let containerRect = container.getBoundingClientRect();
 
+        //Checks if any open windows were moved outside the screen when resized
         if (dragRect.right >= containerRect.right - 10 || dragRect.left <= containerRect.left + 10){
             // console.log("Outside")
             dragTable.style.left = "5%"
