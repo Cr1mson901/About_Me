@@ -392,13 +392,14 @@ li:hover{
     border-style:ridge;
     border-width: .8vmin;
     border-color: #A59F80;
-    z-index: 1;
+    z-index: 0;
     cursor: url("./Assets/pointer.cur"), default;
     height: 12vmin;
     width: 10vmin;
     margin-top: 3%;
     margin-left: 3%;
     padding: 0;
+    display: none;
 }
 .imgContainer{
     background-size: 100%;
