@@ -133,8 +133,8 @@ document.addEventListener("mousedown", function() {
     }
 })
 
-//Grabs all the icons
-var icons = document.querySelectorAll("button")
+//Grabs all the buttons with icons
+var icons = document.querySelectorAll("button:has(.icon)")
 
 //Adds listners for mousedown and dblclicks on icons
 icons.forEach(icon => {
@@ -156,7 +156,7 @@ icons.forEach(icon => {
         // Stops the document from recieving the click
         e.stopPropagation()
 
-        //Unhighlighs the icon
+        //Unhighlights the icon
         this.querySelector("figure").style.background = "none"
         console.log("Open")
         //Opens the window with the same name as the figcaption of the icon clicked
