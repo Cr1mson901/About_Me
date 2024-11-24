@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "7Segment";
-    src: url("./ICON/7-segments-display.ttf");
+    src: url("./Assets/7-segments-display.ttf");
 }
 
 html, body{
@@ -18,7 +18,7 @@ body {
     background-color: black;
 }
 button {
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./Assets/pointer.cur"), default;
 }
 
 area {
@@ -33,12 +33,12 @@ area {
     transform: translateX(-50%) translateY(-50%);
     height: 100vmin;
     z-index: 0;
-    cursor: url("./ICON/xCursor.cur"), default;
+    cursor: url("./Assets/xCursor.cur"), default;
     background: radial-gradient(circle at center, #5B87BD, #3D5A7E)
 }
 
 .crt{
-    cursor: url("./ICON/xCursor.cur"), default;
+    cursor: url("./Assets/xCursor.cur"), default;
     position: absolute;
     height: 80vmin;
     width: 108vmin;
@@ -206,7 +206,7 @@ area {
   }
 /* Turns the cursor into the pointer while hovering */
 .box:hover {
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./Assets/pointer.cur"), default;
 }
 
 .innerBox {
@@ -322,7 +322,7 @@ li{
     font-size: 1.4vmin;
 }
 li:hover{
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./Assets/pointer.cur"), default;
 }
 
 .submenu {
@@ -353,7 +353,7 @@ li:hover{
 }
 
 .icon:hover{
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./Assets/pointer.cur"), default;
 }
 
 .icon img{
@@ -374,7 +374,7 @@ li:hover{
     top: 50%;
     bottom: 50%;
     font-style: italic;
-    cursor: url("./ICON/xCursor.cur"), default;
+    cursor: url("./Assets/xCursor.cur"), default;
 }
 
 #iconBox button{
@@ -394,7 +394,7 @@ li:hover{
     width: 73.33vmin;
     height: 55vmin;
     z-index: 2;
-    cursor: url("./ICON/pointer.cur"), default;
+    cursor: url("./Assets/pointer.cur"), default;
 }
 
 .windowHeader {

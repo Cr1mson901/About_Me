@@ -298,7 +298,6 @@ let gallarySize = photos.length
 var currentPhoto = 0;
 photos[currentPhoto].style.display = "block"
 
-
 let rightArrow = document.getElementById("navRight")
 let leftArrow = document.getElementById("navLeft")
 //TODO: Implement keyboard controls

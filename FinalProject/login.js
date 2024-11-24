@@ -81,7 +81,7 @@ function addUser(name) {
     newUser.classList.add("userIcon");
     // Image Element 
     const img = document.createElement('img');
-    img.src = './ICON/irix/display.png';
+    img.src = './Assets/irix/display.png';
     img.alt = 'Display';
     // Caption Element
     const newName = document.createElement('figcaption');
@@ -109,7 +109,7 @@ function insertAfter(referenceNode, newNode) {
 function iconSelect(icon){
     iconReset(true);
     let img = icon.querySelector("img");
-    img.src = "./ICON/irix/selectedDisplay.png";
+    img.src = "./Assets/irix/selectedDisplay.png";
     let accountName = icon.querySelector("figcaption").innerHTML;
     inputField.value = accountName;
     if (accountName == 'root') {
@@ -124,7 +124,7 @@ function iconReset(selected) {
     var figures = document.querySelectorAll('figure');
     for (let figure of figures) {
         let img = figure.querySelector("img");
-        img.src = "./ICON/irix/display.png"
+        img.src = "./Assets/irix/display.png"
     }
     iconSelected = selected;
     accountLabel.innerHTML = '';
