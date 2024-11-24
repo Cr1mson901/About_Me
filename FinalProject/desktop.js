@@ -75,11 +75,12 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
             var containerRect = container.getBoundingClientRect();
             var dragRect = dragTable.getBoundingClientRect();
 
-            // Check if the new position is within the container bounds
-            if (newLeft >= 10 && newLeft + dragRect.width <= containerRect.width - 10) {
+            // Check if the new position is within the container bounds //Edit this so its based on percentage and not static pixels
+            //877
+            if (newLeft >= 12/877 * containerRect.height && newLeft + dragRect.width <= containerRect.width * 870/877) {
                 dragTable.style.left = newLeft + "px";
             }
-            if (newTop >= 10 && newTop + dragRect.height <= containerRect.height - 20) {
+            if (newTop >= containerRect.height* 3/650 && newTop + dragRect.height <= containerRect.height * 640/650) {
                 dragTable.style.top = newTop + "px";
             }
         };
@@ -160,7 +161,7 @@ icons.forEach(icon => {
         this.querySelector("figure").style.background = "none"
         console.log("Open")
         //Opens the window with the same name as the figcaption of the icon clicked
-        openWindow(this)
+        openWindow(document.getElementById(this.querySelector("figcaption").innerText))
     })
 })
 
@@ -222,17 +223,27 @@ function getTime(){
 
 //Hides the window when minimize is clicked
 //TODO Implement minimized icon
+var order = 0
 var windows = document.querySelectorAll(".window").forEach((window) => {
     window.querySelector(".minus").addEventListener("click", function() {
         window.style.display = "none"
+        order += 1
+        let minIcon = document.getElementById(window.id + "Minimized")
+        minIcon.style.display = "block"
+        minIcon.style.order = order
     })
 })
 
 //Opens a window when an icon is double clicked
-function openWindow(icon){
-    let window = document.getElementById(icon.querySelector("figcaption").innerText)
+function openWindow(window){
     if (getComputedStyle(window).display == "none"){ //Checks if the window is hidden
         window.style.display = 'flex'; //Reveals window
+
+        //Gets rid of the minimized Icon if it is present
+        let minIcon = document.getElementById(window.id + "Minimized")
+        if(minIcon.style.display != "none"){
+            minIcon.style.display = "none"
+        }
         //Top left corner to ensure all windows will open within the bounds of the screen
         window.style.top = "1%";
         window.style.left = "1%";
