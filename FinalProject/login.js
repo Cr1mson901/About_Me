@@ -100,7 +100,7 @@ function addUser(name) {
     const lastUser = users[users.length - 1]
     insertAfter(lastUser, newUser)
 }
-
+//Borrowed code to insert after
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }

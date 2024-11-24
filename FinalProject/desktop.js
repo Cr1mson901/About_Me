@@ -94,7 +94,7 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
 
 //Moves the user to the login screen
 function logOut(){
-    window.location.href='login.html?from=desktop';
+    window.location.href='login.html?from=desktop'; //from=desktop tells the login screen to not be powered off
 }
 
 // Changes which side the submenus come out based on how close to the right edge they are
@@ -216,6 +216,8 @@ function getTime(){
     if (minutes < 10){minutes = "0" + minutes}; //If 1 digit adds a 0
     if (hours < 10){hours = "0" + hours} //If 1 digit adds a 0
     time.innerText = `${hours}:${minutes}`; //Prints to screen
+    //Builds a new calendar if the day changes
+    if (hours == "00" && minutes == "00"){buildCalendar(d)}
 }
 
 //Hides the window when minimize is clicked
