@@ -232,6 +232,9 @@ var windows = document.querySelectorAll(".window").forEach((window) => {
         minIcon.style.display = "block"
         minIcon.style.order = order
     })
+    window.querySelector(".quit").addEventListener("click", function() {
+        window.style.display = "none"
+    })
 })
 
 //Opens a window when an icon is double clicked

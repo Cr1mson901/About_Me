@@ -483,12 +483,12 @@ li:hover{
     height: 100%;
     flex-grow: 1;
 }
-.minimize{
+.quit{
     position: relative;
     border-color: black;
     border-style: double;
 }
-.minimizeIcon {
+.quitIcon {
     width: 20%;
     height: 20%;
 }
