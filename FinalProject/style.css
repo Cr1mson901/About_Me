@@ -511,51 +511,64 @@ li:hover{
 #CDplayer {
     width: 70%;
     height: 32vmin;
-    display: none;
+    /* display: none; */
 }
 #CDplayer .body{
     display: flex;
     flex-direction: row;
     background-color: #C0C0C0;
+    border: black solid;
 }
 #cdLeft {
-    border: greenyellow;
-    border-style: dotted;
+    border: black solid;
     flex-grow: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
 }
-#cdRight{
-    border: greenyellow;
-    border-style: dotted;
+#cdLeft .row{
+    border: black, solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     flex-grow: 1;
-}
-#cdRightHeader {
-    border: greenyellow;
-    border-style: dotted;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+#cdRight{
+    border: black solid;
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#cdRightHeader {
+    border: black solid;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
 }
 #cdRightHeader p{
-    position: relative;
-    border: greenyellow;
-    border-style: dotted;
+    border: black solid;
     flex-grow: 1;
-    font-size: 90%;
-    margin-right: 1%;
-    margin-left: 1%;
+    flex-basis: 100%;
 }
 #cdRightDisplay{
-    border: greenyellow;
-    border-style: dotted;
+    border: black solid;
     display: flex;
-    flex-direction: inherit;
+    flex-direction: row;
+    flex-grow: 1;
 }
 #cdRightDisplay div{
-    border: red;
-    border-style: dotted;
+    border: black solid;
     flex-grow: 1;
-    height: 2vmin;
-    margin-right: 1%;
-    margin-left: 1%;
+}
+#cdMenu{
+    width: 100%;
+    flex-grow: 3;
 }
 /* Stylization for Photos */
 #photos {
@@ -633,6 +646,8 @@ li:hover{
 .calendarRow{
     border: black, solid;
     border-top: none;
+    border-left: none;
+    border-right: none;
     flex-grow: 1;
     width: 100%;
     display: flex;
