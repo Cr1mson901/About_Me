@@ -294,8 +294,10 @@ function getWeather(position){
             document.getElementById('temp').innerText = (`${data.main.temp}°F`);
             document.getElementById('humidity').innerText = (`${data.main.humidity}% Humidity`)
             document.getElementById("wind").innerText = (`${data.wind.speed}Mph Winds`);
-            // let iconURL = `./icon/weather/${data.weather[0].icon}.png`
-            // document.getElementById("weather").style.backgroundImage = `url(${iconURL})`
+            
+            //Displays A cute lil icon to represent the weather outside
+            let iconURL = `./Assets/weather/${data.weather[0].icon}.png`
+            document.getElementById("weatherIcon").src = iconURL
         } else {
             console.error('Unexpected data structure:', data);
         }
