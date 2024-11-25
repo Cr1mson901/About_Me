@@ -727,13 +727,13 @@ li:hover{
 #dumpster{
     width: 60vmin;
     height: 30vmin;
+    display: none;
 }
 #dumpster .body{
     overflow-y: auto;
     overflow-x: hidden;
     text-align: left;
     font-size: clamp(1px, 1.2vmin, 100px);
-    display: none;
 }
 #dumpster img{
     height: 1.5vmin;
