@@ -290,6 +290,8 @@ area {
 #loginBTN {
     right: 20%; 
     bottom: 7%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 #helpBTN {
     right: 7%; 
