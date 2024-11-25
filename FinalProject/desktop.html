@@ -59,14 +59,6 @@
                             <li id="lastOnlineTime">Time</li>
                         </ul>
                     </li>
-                    <li id="weather" class="mainmenu" style="display: flex; flex-direction: row;">Weather<img id="weatherIcon">
-                        <ul class="submenu">
-                            <li id="weatherGenerator">Generate</li>
-                            <li id="temp">Temperature</li>
-                            <li id="humidity">Humidity</li>
-                            <li id="wind">WindSpeed</li>
-                        </ul>
-                    </li>
                     <li id="links" class="mainmenu">Links
                         <ul class="submenu">
                             <li><a href="https://github.com/Cr1mson901" target="_blank" rel="noopener noreferrer">Github</a></li>
@@ -81,8 +73,12 @@
                             <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/DevonOConnor-0451/14B9D563950794F6?sharingId" target="_blank" rel="noopener noreferrer">Azure Fundamentals</a></li>
                         </ul>
                     </li>
-                    <li id="exit" onclick="logOut()">Log Out</li>
-                    <li id="shutdown" onclick="powerSwitch()">Shutdown</li>
+                    <li id="weather" class="mainmenu" style="display: flex; flex-direction: row; cursor: pointer;" onclick="getLocation()">Weather<img id="weatherIcon">
+                        <ul class="submenu">
+                        </ul>
+                    </li>
+                    <li id="exit" onclick="logOut()" style="cursor: pointer;">Log Out</li>
+                    <li id="shutdown" onclick="powerSwitch()" style="cursor: pointer;">Shutdown</li>
                 </ul>
             </div>
             <div id="iconBox">

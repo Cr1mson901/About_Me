@@ -254,27 +254,14 @@ function openWindow(window){
     focus(window) //Makes the window be on top when opened
 }
 
-//Weather
-var generator = document.getElementById("weatherGenerator")
-generator.addEventListener("click", function(){
-    getLocation()
-})
-//TODO: Need to revisit this code, can fix/reduce
 function getLocation() {
-if (navigator.geolocation) {
-    navigator.permissions &&
-    navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
-    if('granted' === PermissionStatus.state) {
-        navigator.geolocation.getCurrentPosition(function(geoposition) {
-            console.log(geoposition)
-            getWeather(geoposition) // Uses this position if location has been accepted
-        })
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            getWeather, 
+            () => console.error("Permission denied or location unavailable.")
+        );
     } else {
-    navigator.geolocation.getCurrentPosition(getWeather);
-    }
-    })
-    } else {
-        generator.innerText = "Geolocation is not supported by this browser.";
+        console.error("Geolocation is not supported by this browser.");
     }
 }
 function getWeather(position){
@@ -291,10 +278,27 @@ function getWeather(position){
     .then(data => {
         // Check if data and data.main are present
         if (data && data.main && data.main.temp) {
-            document.getElementById('temp').innerText = (`${data.main.temp}°F`);
-            document.getElementById('humidity').innerText = (`${data.main.humidity}% Humidity`)
-            document.getElementById("wind").innerText = (`${data.wind.speed}Mph Winds`);
-            
+            let weatherMenu = document.getElementById("weather");
+            console.log(weatherMenu.childElementCount)
+                submenu = weatherMenu.querySelector(".submenu")
+                //Resets the inner html
+                submenu.innerHTML = ""
+                
+                let temp = document.createElement("li")
+                temp.id = "temp"
+                temp.innerText = `${data.main.temp}°F`
+                submenu.appendChild(temp)
+                
+                let humidity = document.createElement("li")
+                humidity.id = "humidity"
+                humidity.innerText = `${data.main.humidity}% Humidity`
+                submenu.appendChild(humidity)
+                
+                let wind = document.createElement("li")
+                wind.id = "wind"
+                wind.innerText = `${data.wind.speed}Mph Winds`
+                submenu.appendChild(wind)
+
             //Displays A cute lil icon to represent the weather outside
             let iconURL = `./Assets/weather/${data.weather[0].icon}.png`
             document.getElementById("weatherIcon").src = iconURL
