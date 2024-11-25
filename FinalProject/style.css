@@ -722,3 +722,44 @@ li:hover{
     height: 97.3% !important;
     width: 98.7% !important;
 }
+
+/* Dumpster CSS */
+#dumpster{
+    width: 60vmin;
+    height: 30vmin;
+}
+#dumpster .body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: left;
+    font-size: clamp(1px, 1.2vmin, 100px);
+}
+#dumpster img{
+    height: 1.5vmin;
+}
+#dumpster table{
+    width: 100%;
+}
+#dumpster tr{
+    width: 100%;
+}
+#dumpster .dumpsterC1{
+    width: 5%;
+}
+#dumpster .dumpsterC2{
+    width: 30%;
+}
+#dumpster .dumpsterC3{
+    width: 12.5%;
+}
+#dumpster .dumpsterC4{
+    width: 21.75%;
+}
+#dumpster .dumpsterC5{
+    width: 21.75%;
+}
+
+/* Roms CSS */
+#roms{
+    display: none;
+}
