@@ -556,15 +556,18 @@ li:hover{
 #list li{
     position: relative;
     font-size: 2vmin;
-    width: 100%;
     border: 0px;
     border-color: transparent;
     background-color: transparent;
     padding: 0;
     font-style: italic;
+    width: fit-content;
 }
 .completed{
     color: rgb(47, 180, 47);
+}
+.completed li{
+    cursor: pointer;
 }
 
 /* Stylization for the cdplayer*/
@@ -799,6 +802,8 @@ li:hover{
     width: 100%;
     height: 3vmin;
     display: flex;
+    position: sticky;
+    top: 0;
 }
 #blogHeader img{
     height: 100%;
