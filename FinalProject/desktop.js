@@ -222,7 +222,6 @@ function getTime(){
 }
 
 //Hides the window when minimize is clicked
-//TODO Implement minimized icon
 var order = 0
 var windows = document.querySelectorAll(".window").forEach((window) => {
     window.querySelector(".minus").addEventListener("click", function() {
