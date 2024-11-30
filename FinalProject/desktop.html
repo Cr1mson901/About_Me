@@ -44,9 +44,9 @@
                     <div class="imgContainer"style="background-image: url(./Assets/minimizedIcons/resume.jpg);"></div>
                     <div class="label"><p>resume</p></div>
                     </div>
-                <div class="minimizedIcon" id="romsMinimized" onclick="openWindow(document.getElementById('roms'))">
-                    <div class="imgContainer"style="background-image: url(./Assets/minimizedIcons/roms.jpg);"></div>
-                    <div class="label"><p>roms</p></div>
+                <div class="minimizedIcon" id="blogMinimized" onclick="openWindow(document.getElementById('blog'))">
+                    <div class="imgContainer"style="background-image: url(./Assets/minimizedIcons/blog.png);"></div>
+                    <div class="label"><p>blog</p></div>
                     </div>
             </div>
             <div>
@@ -122,6 +122,12 @@
                     <figure class="icon">
                         <img src="./Assets/irix/calendar.png">
                         <figcaption>calendar</figcaption>
+                    </figure>
+                </button>
+                <button>
+                    <figure class="icon">
+                        <img src="./Assets/irix/blog.png">
+                        <figcaption>blog</figcaption>
                     </figure>
                 </button>
             </div>
@@ -423,7 +429,6 @@
                     <div id="picture">
                         <img class="vertical"  src="./Assets/photos/Fan.jpg">
                         <img class="vertical"  src="./Assets/photos/2024.jpg">
-                        <img class="landscape" src="./Assets/photos/background.jpg">
                         <img class="vertical"  src="./Assets/photos/BlueSkull.jpg">
                         <img class="vertical"  src="./Assets/photos/ClawOut.JPG">
                         <img class="vertical"  src="./Assets/photos/cutSkull.jpg">
@@ -684,6 +689,45 @@
                             <td class="dumpsterC5">10/4/2024 16:45</td>
                         </tr>
                     </table> 
+                </div>
+            </div>
+            <div class="window" id="blog">
+                <div class="windowHeader draggable">
+                    <div class="minus control-btn">
+                        <div class="minusIcon rectangle"></div>
+                    </div>
+                    <div class="winTitle">
+                        blog
+                    </div>
+                    <div class="quit control-btn">
+                        <div class="quitIcon rectangle"></div>
+                    </div>
+                    <div class="maximize control-btn" onclick="maximize(this.parentElement.parentElement)">
+                        <div class="rectangle maximizeIcon"></div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div id="blogHeader">
+                        <!-- <img src="./Assets/leftArrow.png"> -->
+                        <p id="blogDate">11/20/2024</p>
+                        <!-- Will uncomment when more blogs are made to be able to actually scroll -->
+                        <!-- <img src="./Assets/rightArrow.png"> -->
+                    </div>
+                    <div id="blogBody">
+                        <div id="blogConcert">
+                            <h1>My First Live Concert Experience: Pond at The Shelter</h1>
+                            <p>I finally got to attend the Pond concert today, and wow—it was an unforgettable experience. The band's performance was electric.</p>
+                            <h2>The Little Missteps</h2>
+                            <p>First, let’s talk about the lessons learned. I made a rookie mistake by insuring my ticket, which added an unnecessary $10 to the cost. That meant I wasn’t about to splurge another $60 on a hoodie I wasn’t even that crazy about. Then came my footwear decision—my trusty Converse. Turns out, they’re not so trusty when you’re standing on a concrete floor for hours. My feet were begging for mercy by the end of the night. Lastly, I was stationed near the speaker without ear protection, and my right ear is still ringing days later. Lesson learned: next time, earplugs are a must.</p>
+                            <h2>The Opening Act: Fazerdaze</h2>
+                            <p>The night kicked off with Fazerdaze, a band I hadn’t heard of before. Unfortunately, only two band members were present, which might have dampened the fullness of their sound. The lead vocalist had a soft, melodic tone that was pleasant but sometimes got overpowered by the instruments. Their vibe reminded me of SickHack, with a similar blend of soft vocals over rock instrumentation. While it wasn’t a show-stealer, they were a decent opener to set the stage.</p>
+                            <h2>Pond Takes Over</h2>
+                            <p>Then Pond hit the stage, and everything shifted. Nick Allbrook, their lead vocalist, brought an explosive energy that electrified the entire venue. How he managed to keep that level of intensity throughout the entire set is beyond me. The Shelter transformed into a pulsating haven of music, with the crowd feeding off every note and movement.
+                                What made the performance extra special for me was hearing some of their older tracks live, like Fantastic Explosion of Time and Giant Tortoise. These songs hold a special place in my heart, and experiencing them in person was nothing short of magical.</p>
+                            <h2>Final Thoughts</h2>
+                            <p>Despite the aching feet and ringing ears, this concert was an incredible experience and the perfect introduction to live music. Pond delivered a performance that was as dynamic as it was memorable, and I couldn’t have asked for a better first live show. Next time, though? I’ll be better prepared—and maybe snag a hoodie if it’s worth it.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
