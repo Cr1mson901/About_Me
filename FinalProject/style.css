@@ -347,6 +347,12 @@ li:hover{
     cursor: grab;
 }
 
+#weather{
+    display: flex; 
+    flex-direction: row; 
+    cursor: pointer;
+}
+
 
 /* Icons Styling */
 .icon{
