@@ -774,3 +774,41 @@ li:hover{
 #dumpster .dumpsterC5{
     width: 21.75%;
 }
+
+/* CSS for Blog */
+#blog{
+    width: 50vmin;
+    height: 70.7vmin;
+    display: none;
+}
+#blog .body{
+    overflow-y: auto;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+#blogHeader{
+    border-bottom: black solid;
+    background-color: #C1C1C1;
+    width: 100%;
+    height: 3vmin;
+    display: flex;
+}
+#blogHeader img{
+    height: 100%;
+}
+#blogDate{
+    flex-grow: 1; 
+    text-align: center; 
+    font-size: 1.2vmin;
+}
+#blogBody{
+    flex-grow: 1;
+    margin: 1%;
+}
+#blogBody p{
+    font-size: 2vmin;
+}
+#blogBody h1,h2{
+    text-align: center;
+}
