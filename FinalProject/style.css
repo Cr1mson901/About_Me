@@ -565,23 +565,38 @@ li:hover{
 #CDplayer {
     width: 70%;
     height: 32vmin;
-    display: none;
 }
+/* Under Construction Display
+    Remove when Completed */
+#CDplayer .body::after{
+    content: " ";
+    position: absolute;
+    width: 70%;
+    height: 90%;
+    background-image: url(./Assets/underConstruction.png);
+    background-size: contain;
+    top: 49.5%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
 #CDplayer .body{
     display: flex;
     flex-direction: row;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: #C0C0C0;
-    border: black solid;
+    border: black solid .1vmin;
 }
 #cdLeft {
-    border: black solid;
+    border: inherit;
     flex-grow: 1;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
 }
 #cdLeft .row{
-    border: black, solid;
+    border: inherit;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -593,36 +608,37 @@ li:hover{
     overflow: hidden;
 }
 #cdRight{
-    border: black solid;
+    border: inherit;
     flex-grow: 1;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
 }
 #cdRightHeader {
-    border: black solid;
+    border: inherit;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
 }
 #cdRightHeader p{
-    border: black solid;
+    border: inherit;
     flex-grow: 1;
     flex-basis: 100%;
 }
 #cdRightDisplay{
-    border: black solid;
+    border: inherit;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
 }
 #cdRightDisplay div{
-    border: black solid;
+    border: inherit;
     flex-grow: 1;
 }
 #cdMenu{
     width: 100%;
     flex-grow: 3;
+    overflow-y: auto;
 }
 /* Stylization for Photos */
 #photos {
