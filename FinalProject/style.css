@@ -574,6 +574,7 @@ li:hover{
 #CDplayer {
     width: 70%;
     height: 32vmin;
+    display: none;
 }
 /* Under Construction Display
     Remove when Completed */
