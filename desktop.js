@@ -1,4 +1,3 @@
-require('dotenv').config()
 window.onload = function() {
     //Pulls the html elements for the user in the tool box
     var chestUser = document.getElementById("userName");
@@ -266,9 +265,8 @@ function getLocation() {
 }
 function getWeather(position){
     console.log(position)
-    let apiKey = process.env.AUTHO_API
     const url = 
-        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=92cd8cd8f4fb9e75e5bfd3035db58c91&units=imperial`
     fetch(url)
     .then(response => {
         if (!response.ok) {
