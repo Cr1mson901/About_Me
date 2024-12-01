@@ -95,7 +95,7 @@ document.querySelectorAll('.draggable').forEach((dragElement) => {
 
 //Moves the user to the login screen
 function logOut(){
-    window.location.href='login.html?from=desktop'; //from=desktop tells the login screen to not be powered off
+    window.location.href='index.html?from=desktop'; //from=desktop tells the login screen to not be powered off
 }
 
 // Changes which side the submenus come out based on how close to the right edge they are
