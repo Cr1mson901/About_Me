@@ -23,7 +23,11 @@ window.onload = function() {
         container.classList.add("poweroff")
         border.style.background = "radial-gradient(circle at center, #3a3a3a, #000)";
     } else if (crtState == "disabled"){
+        crtBtnLbl = document.getElementById("crtBtnLbl")
+        crtBtnLbl.style.color = "lightgreen"
+        crtBtnLbl.innerText = "ON"
         container.classList.add("poweroff")
+
     }
 };
 
